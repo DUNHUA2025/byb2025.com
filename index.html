@@ -1,16 +1,51 @@
 <html lang="zh-TW"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>幣友圈-香港註冊品牌</title>
+    <title>Bybanx 幣友圈 BYB｜香港文化創意產業 Web3 RWA 應用平台</title>
+    <!-- ===== SEO Meta Tags ===== -->
+    <meta name="description" content="Bybanx幣友圈 BYB — 香港敦華集團旗下 Web3 平台，以真實文化產業資產（RWA）為錨定，結合 NFT、DAO 治理、GameFi、SocialFi，讓用戶成為消費者＋投資者＋治理者。">
+    <meta name="keywords" content="BYB, Bybanx, 幣友圈, RWA, NFT, Web3, DAO, GameFi, 香港區塊鏈, 文化創意產業, 敦華集團, 真實資產上鏈">
+    <meta name="author" content="Bybanx 幣友圈 / 敦華集團">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://byb2025.com/">
+    <link rel="icon" type="image/png" href="/images/byb-logo.png">
+    <link rel="apple-touch-icon" href="/images/byb-logo.png">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://byb2025.com/">
+    <meta property="og:title" content="Bybanx 幣友圈 BYB｜香港文化創意產業 Web3 RWA 應用平台">
+    <meta property="og:description" content="以真實文化產業資產為錨定，結合 NFT、DAO 治理、GameFi，讓消費即投資成為現實。">
+    <meta property="og:image" content="https://byb2025.com/images/byb-logo.png">
+    <meta property="og:locale" content="zh_TW">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@BYBANX">
+    <meta name="twitter:title" content="Bybanx 幣友圈 BYB｜Web3 RWA 文化創意平台">
+    <meta name="twitter:description" content="以真實文化產業資產為錨定，結合 NFT、DAO 治理、GameFi，讓消費即投資成為現實。">
+    <meta name="twitter:image" content="https://byb2025.com/images/byb-logo.png">
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Bybanx 幣友圈",
+      "url": "https://byb2025.com",
+      "logo": "https://byb2025.com/images/byb-logo.png",
+      "description": "香港敦華集團旗下 Web3 平台，以真實文化產業資產（RWA）為錨定的數位資產生態",
+      "address": { "@type": "PostalAddress", "addressLocality": "屯門", "addressRegion": "香港" },
+      "sameAs": ["https://x.com/BYBANX", "https://t.me/BYBANX", "https://bybanx.com"]
+    }
+    </script>
+    <!-- ===== END SEO ===== -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
-    <!-- 引入EmailJS库用于邮件发送 -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-    <!-- 引入Google翻譯API -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Translate API -->
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
     <script>
@@ -187,48 +222,1196 @@
             color: #b91c1c;
             border: 1px solid #fecaca;
         }
+
+        /* ===== 新增：RWA市場數據橫幅 ===== */
+        .rwa-ticker {
+            background: linear-gradient(90deg, #0F3460, #1A73E8, #0F3460);
+            background-size: 200% auto;
+            animation: gradientShift 4s linear infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 24px;
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* ===== 新增：信任徽章 ===== */
+        .trust-badge {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .trust-badge:hover {
+            box-shadow: 0 8px 24px rgba(15,52,96,0.12);
+            transform: translateY(-3px);
+        }
+        .trust-badge-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* ===== 新增：平台對比區塊 ===== */
+        .platform-compare-card {
+            border: 2px solid transparent;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        .platform-compare-card:hover {
+            border-color: #E6B325;
+            box-shadow: 0 12px 32px rgba(230,179,37,0.15);
+        }
+        .platform-compare-card.featured {
+            border-color: #E6B325;
+            box-shadow: 0 8px 24px rgba(230,179,37,0.2);
+        }
+
+        /* ===== 新增：FAQ 手風琴 ===== */
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .faq-question {
+            cursor: pointer;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #0F3460;
+            transition: color 0.2s;
+        }
+        .faq-question:hover { color: #1A73E8; }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+        .faq-answer.open {
+            max-height: 300px;
+            padding-bottom: 20px;
+        }
+        .faq-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        .faq-item.active .faq-icon {
+            background: #E6B325;
+            color: #0F3460;
+            transform: rotate(45deg);
+        }
+
+        /* ===== 新增：Cookie Banner ===== */
+        #cookieBanner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: rgba(15, 52, 96, 0.97);
+            backdrop-filter: blur(8px);
+            border-top: 2px solid #E6B325;
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #cookieBanner.show { transform: translateY(0); }
+
+        /* ===== 新增：資產卡片動畫 ===== */
+        .asset-card {
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+        .asset-card.fade-out {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+        }
+
+        /* ===== 新增：數字計數動畫 ===== */
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ===== 新增：白皮書CTA ===== */
+        .whitepaper-cta {
+            background: linear-gradient(135deg, #E6B325 0%, #f5c842 100%);
+            border-radius: 12px;
+            padding: 4px;
+        }
+        .whitepaper-cta-inner {
+            background: #0F3460;
+            border-radius: 10px;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+        .whitepaper-cta-inner:hover { background: #162a5e; }
+
+        /* ===== 進度條層級修正 ===== */
+        .progress-bar { z-index: 9998; }
+
+        /* ===== 平台連結卡片 ===== */
+        .platform-link-card {
+            background: linear-gradient(135deg, #0F3460 0%, #1a2e5a 100%);
+            border: 1px solid rgba(230,179,37,0.3);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        .platform-link-card:hover {
+            border-color: #E6B325;
+            box-shadow: 0 8px 32px rgba(230,179,37,0.2);
+            transform: translateY(-4px);
+        }
+    </style>
+
+    <!-- ======================================================
+         UI VISUAL UPGRADE — Premium Design System v2.0
+         Glassmorphism · Gradient Borders · Particle Canvas
+         Glow Cards · Animated Counters · Neon Accents
+    ====================================================== -->
+    <style>
+        /* ── 1. DESIGN TOKENS ─────────────────────────────── */
+        :root {
+            --primary:   #0F3460;
+            --secondary: #E6B325;
+            --accent:    #1A73E8;
+            --dark:      #0A0E1A;
+            --glow-gold: rgba(230,179,37,0.55);
+            --glow-blue: rgba(26,115,232,0.45);
+            --glass-bg:  rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.12);
+            --card-radius: 20px;
+            --transition: 0.38s cubic-bezier(0.22,1,0.36,1);
+        }
+
+        /* ── 2. GLOBAL BODY UPGRADE ──────────────────────── */
+        body {
+            background-color: #F0F2F8;
+            background-image:
+                radial-gradient(ellipse 900px 600px at 10% 20%, rgba(15,52,96,0.06) 0%, transparent 70%),
+                radial-gradient(ellipse 700px 500px at 90% 80%, rgba(26,115,232,0.05) 0%, transparent 70%);
+        }
+
+        /* ── 3. HERO SECTION UPGRADE ─────────────────────── */
+        .hero-gradient {
+            background: linear-gradient(135deg, #060d1f 0%, #0F3460 40%, #122952 70%, #1A1A2E 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        /* Animated mesh background */
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 50%, rgba(26,115,232,0.18) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 80% at 80% 30%, rgba(230,179,37,0.10) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 50% 80%, rgba(26,115,232,0.12) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .hero-gradient > * { position: relative; z-index: 1; }
+
+        /* Hero particle canvas */
+        #heroCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.55;
+        }
+
+        /* Animated headline gradient text */
+        .hero-headline-gradient {
+            background: linear-gradient(135deg, #fff 0%, #E6B325 50%, #fff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmerText 4s linear infinite;
+        }
+        @keyframes shimmerText {
+            0%   { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* Hero accent label */
+        .hero-accent-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(90deg, rgba(230,179,37,0.15), rgba(230,179,37,0.05));
+            border: 1px solid rgba(230,179,37,0.4);
+            border-radius: 999px;
+            padding: 6px 18px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #E6B325;
+            backdrop-filter: blur(8px);
+        }
+        .hero-accent-label::before {
+            content: '';
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #E6B325;
+            box-shadow: 0 0 8px 2px #E6B325;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%,100% { transform: scale(1); opacity: 1; }
+            50%      { transform: scale(1.5); opacity: 0.6; }
+        }
+
+        /* Hero CTA buttons */
+        .btn-primary-glow {
+            background: linear-gradient(135deg, #E6B325 0%, #f5c842 100%);
+            color: #0F3460;
+            border: none;
+            border-radius: 999px;
+            padding: 14px 36px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            box-shadow: 0 8px 24px rgba(230,179,37,0.4), 0 2px 8px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary-glow::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        .btn-primary-glow:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(230,179,37,0.55); }
+        .btn-primary-glow:hover::after { transform: translateX(100%); }
+
+        .btn-outline-glow {
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.35);
+            border-radius: 999px;
+            padding: 12px 34px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            backdrop-filter: blur(6px);
+        }
+        .btn-outline-glow:hover {
+            background: rgba(255,255,255,0.12);
+            border-color: rgba(255,255,255,0.7);
+            transform: translateY(-3px);
+            box-shadow: 0 0 24px rgba(255,255,255,0.15);
+        }
+
+        /* Hero floating cards upgrade */
+        .hero-float-card {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 14px;
+            padding: 14px 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+        .hero-float-card-gold {
+            background: linear-gradient(135deg, rgba(230,179,37,0.9), rgba(245,200,66,0.85));
+            color: #0F3460;
+            box-shadow: 0 8px 24px rgba(230,179,37,0.5);
+        }
+        .hero-float-card-dark {
+            background: linear-gradient(135deg, rgba(15,52,96,0.95), rgba(10,20,45,0.9));
+            color: #fff;
+            border: 1px solid rgba(230,179,37,0.5);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+        /* Hero advantage cards */
+        .hero-adv-card {
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: var(--card-radius);
+            transition: var(--transition);
+        }
+        .hero-adv-card:hover {
+            background: rgba(255,255,255,0.12);
+            border-color: rgba(230,179,37,0.5);
+            box-shadow: 0 0 40px rgba(230,179,37,0.15), 0 16px 40px rgba(0,0,0,0.25);
+            transform: translateY(-8px);
+        }
+        .hero-adv-icon {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(230,179,37,0.9) 0%, rgba(245,200,66,0.7) 100%);
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 16px rgba(230,179,37,0.4);
+        }
+
+        /* ── 4. NAV UPGRADE ──────────────────────────────── */
+        #mainNav {
+            background: transparent;
+        }
+        .nav-scrolled {
+            background: rgba(10, 20, 45, 0.88) !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+            border-bottom: 1px solid rgba(230,179,37,0.2) !important;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.3) !important;
+        }
+        .nav-link-pill {
+            color: rgba(255,255,255,0.85);
+            padding: 7px 16px;
+            border-radius: 999px;
+            font-weight: 500;
+            font-size: 0.92rem;
+            transition: var(--transition);
+        }
+        .nav-link-pill:hover {
+            color: #E6B325;
+            background: rgba(230,179,37,0.1);
+        }
+        .nav-cta {
+            background: linear-gradient(135deg, #E6B325, #f5c842);
+            color: #0F3460;
+            font-weight: 700;
+            border-radius: 999px;
+            padding: 9px 26px;
+            transition: var(--transition);
+            box-shadow: 0 4px 14px rgba(230,179,37,0.35);
+        }
+        .nav-cta:hover {
+            box-shadow: 0 8px 24px rgba(230,179,37,0.55);
+            transform: translateY(-2px);
+        }
+
+        /* ── 5. SECTION HEADERS UPGRADE ─────────────────── */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #E6B325;
+            margin-bottom: 12px;
+        }
+        .section-label::before, .section-label::after {
+            content: '';
+            height: 1px;
+            width: 28px;
+            background: linear-gradient(90deg, transparent, #E6B325, transparent);
+        }
+        .section-divider {
+            width: 60px; height: 4px;
+            background: linear-gradient(90deg, #E6B325, #f5c842);
+            border-radius: 2px;
+            margin: 12px auto 0;
+            box-shadow: 0 0 12px rgba(230,179,37,0.5);
+        }
+        .section-divider-left {
+            margin-left: 0;
+        }
+
+        /* ── 6. GLOW CARD SYSTEM ─────────────────────────── */
+        .glow-card {
+            background: #fff;
+            border-radius: var(--card-radius);
+            border: 1px solid rgba(15,52,96,0.08);
+            box-shadow: 0 4px 20px rgba(15,52,96,0.06);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .glow-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--card-radius);
+            opacity: 0;
+            background: linear-gradient(135deg, rgba(230,179,37,0.05) 0%, rgba(26,115,232,0.04) 100%);
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+        }
+        .glow-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 56px rgba(15,52,96,0.12), 0 4px 16px rgba(230,179,37,0.1);
+            border-color: rgba(230,179,37,0.3);
+        }
+        .glow-card:hover::before { opacity: 1; }
+
+        /* Gradient border card */
+        .gradient-border-card {
+            position: relative;
+            background: #fff;
+            border-radius: var(--card-radius);
+            isolation: isolate;
+        }
+        .gradient-border-card::before {
+            content: '';
+            position: absolute;
+            inset: -1.5px;
+            border-radius: calc(var(--card-radius) + 1.5px);
+            background: linear-gradient(135deg, #E6B325, #1A73E8, #0F3460, #E6B325);
+            background-size: 300% 300%;
+            animation: gradBorder 6s ease infinite;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .gradient-border-card:hover::before { opacity: 1; }
+        @keyframes gradBorder {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Dark glass card (for dark bg sections) */
+        .glass-card-dark {
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--card-radius);
+            transition: var(--transition);
+        }
+        .glass-card-dark:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(230,179,37,0.4);
+            box-shadow: 0 0 48px rgba(230,179,37,0.12), 0 20px 48px rgba(0,0,0,0.3);
+            transform: translateY(-6px);
+        }
+
+        /* ── 7. ICON BOX UPGRADE ─────────────────────────── */
+        .icon-box {
+            width: 56px; height: 56px;
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+        .icon-box-primary {
+            background: linear-gradient(135deg, #0F3460 0%, #1a4a8a 100%);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(15,52,96,0.35);
+        }
+        .icon-box-secondary {
+            background: linear-gradient(135deg, #E6B325 0%, #f5c842 100%);
+            color: #0F3460;
+            box-shadow: 0 4px 16px rgba(230,179,37,0.4);
+        }
+        .icon-box-accent {
+            background: linear-gradient(135deg, #1A73E8 0%, #4a9eff 100%);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(26,115,232,0.35);
+        }
+        .glow-card:hover .icon-box-primary { transform: scale(1.08) rotate(-3deg); }
+        .glow-card:hover .icon-box-secondary { transform: scale(1.08) rotate(3deg); }
+
+        /* ── 8. STAT CARD UPGRADE ────────────────────────── */
+        .stat-card {
+            background: #fff;
+            border-radius: var(--card-radius);
+            padding: 36px 28px;
+            text-align: center;
+            border: 1px solid rgba(15,52,96,0.07);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 4px;
+            border-radius: 0 0 var(--card-radius) var(--card-radius);
+        }
+        .stat-card-1::after { background: linear-gradient(90deg,#0F3460,#1A73E8); }
+        .stat-card-2::after { background: linear-gradient(90deg,#E6B325,#f5c842); }
+        .stat-card-3::after { background: linear-gradient(90deg,#1A73E8,#4a9eff); }
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 24px 48px rgba(15,52,96,0.12), 0 8px 24px rgba(230,179,37,0.08);
+        }
+        .stat-number-big {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, #0F3460 0%, #1A73E8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ── 9. MARKET SECTION UPGRADE ──────────────────── */
+        #market {
+            background: linear-gradient(180deg, #F0F4FF 0%, #E8EDF8 100%);
+            position: relative;
+        }
+        #market::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0F3460, #1A73E8, #E6B325, #1A73E8, #0F3460);
+            background-size: 200% auto;
+            animation: gradientShift 4s linear infinite;
+        }
+        .chart-container-upgrade {
+            background: #fff;
+            border-radius: var(--card-radius);
+            padding: 28px;
+            box-shadow: 0 8px 32px rgba(15,52,96,0.08);
+            border: 1px solid rgba(15,52,96,0.06);
+        }
+
+        /* ── 10. SOLUTION / ASSET SECTION ───────────────── */
+        .solution-card {
+            background: #fff;
+            border-radius: var(--card-radius);
+            padding: 40px 32px;
+            border: 1px solid rgba(15,52,96,0.07);
+            box-shadow: 0 4px 20px rgba(15,52,96,0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--stripe, linear-gradient(90deg, #0F3460, #1A73E8));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .solution-card:hover::before { transform: scaleX(1); }
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 28px 60px rgba(15,52,96,0.12);
+        }
+
+        /* Asset card upgrade */
+        .asset-card-upgrade {
+            background: #fff;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            border: 1px solid rgba(15,52,96,0.07);
+            box-shadow: 0 4px 16px rgba(15,52,96,0.06);
+            transition: var(--transition);
+        }
+        .asset-card-upgrade:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 24px 56px rgba(15,52,96,0.14), 0 4px 16px rgba(230,179,37,0.1);
+            border-color: rgba(230,179,37,0.35);
+        }
+        .asset-img-wrap { position: relative; overflow: hidden; }
+        .asset-img-wrap img {
+            transition: transform 0.55s ease;
+        }
+        .asset-card-upgrade:hover .asset-img-wrap img {
+            transform: scale(1.06);
+        }
+        .asset-img-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 60%;
+            background: linear-gradient(to top, rgba(15,52,96,0.7) 0%, transparent 100%);
+            pointer-events: none;
+        }
+        .asset-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(15,52,96,0.1), rgba(26,115,232,0.08));
+            color: #0F3460;
+            border: 1px solid rgba(15,52,96,0.15);
+        }
+        .asset-value-badge {
+            font-weight: 700;
+            font-size: 0.82rem;
+            color: #E6B325;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .asset-value-badge::before {
+            content: '▲';
+            font-size: 0.6rem;
+        }
+
+        /* Asset tab upgrade */
+        .asset-tab-v2 {
+            padding: 9px 22px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: var(--transition);
+            border: 1.5px solid rgba(15,52,96,0.15);
+            color: #6b7280;
+            background: #fff;
+            cursor: pointer;
+        }
+        .asset-tab-v2.active,
+        .asset-tab-v2:hover {
+            background: linear-gradient(135deg, #0F3460, #1a4a8a);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 4px 16px rgba(15,52,96,0.3);
+        }
+
+        /* ── 11. MISSION / VISION SECTION ───────────────── */
+        .mission-vision-section {
+            background: linear-gradient(135deg, #060d1f 0%, #0F3460 50%, #122952 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .mission-vision-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 60% at 15% 50%, rgba(26,115,232,0.15) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 50% at 85% 50%, rgba(230,179,37,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* ── 12. ROADMAP UPGRADE ─────────────────────────── */
+        .timeline-item {
+            position: relative;
+            padding-left: 72px;
+            padding-bottom: 40px;
+        }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-line {
+            position: absolute;
+            left: 18px; top: 36px; bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #0F3460, rgba(15,52,96,0.2));
+        }
+        .timeline-item:last-child .timeline-line { display: none; }
+        .timeline-dot {
+            position: absolute;
+            left: 0; top: 0;
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0F3460, #1A73E8);
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.9rem;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 0 4px rgba(15,52,96,0.12), 0 4px 12px rgba(15,52,96,0.3);
+            transition: var(--transition);
+        }
+        .timeline-item:hover .timeline-dot {
+            background: linear-gradient(135deg, #E6B325, #f5c842);
+            color: #0F3460;
+            box-shadow: 0 0 0 6px rgba(230,179,37,0.18), 0 4px 20px rgba(230,179,37,0.4);
+            transform: scale(1.1);
+        }
+        .timeline-content {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 24px;
+            border: 1px solid rgba(15,52,96,0.07);
+            box-shadow: 0 2px 12px rgba(15,52,96,0.05);
+            transition: var(--transition);
+        }
+        .timeline-item:hover .timeline-content {
+            box-shadow: 0 12px 32px rgba(15,52,96,0.1);
+            border-color: rgba(230,179,37,0.3);
+        }
+
+        /* ── 13. TOKEN SECTION UPGRADE ──────────────────── */
+        #token {
+            background: linear-gradient(160deg, #060d1f 0%, #0d2347 40%, #0F3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        #token::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 70% at 0% 100%, rgba(26,115,232,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 50% at 100% 0%, rgba(230,179,37,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .token-info-card {
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--card-radius);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+        }
+        .token-info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .token-info-row:last-child { border-bottom: none; }
+        .token-info-label { color: rgba(255,255,255,0.55); font-size: 0.88rem; }
+        .token-info-value { color: #fff; font-weight: 600; }
+        .token-fee-bar {
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.08);
+            overflow: hidden;
+            margin-top: 6px;
+        }
+        .token-fee-fill {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, #E6B325, #f5c842);
+            box-shadow: 0 0 8px rgba(230,179,37,0.6);
+        }
+
+        /* ── 14. TRUST BADGE UPGRADE ─────────────────────── */
+        .trust-badge-v2 {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 16px;
+            text-align: center;
+            border: 1px solid rgba(15,52,96,0.07);
+            box-shadow: 0 2px 12px rgba(15,52,96,0.05);
+            transition: var(--transition);
+        }
+        .trust-badge-v2:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(15,52,96,0.1);
+            border-color: rgba(230,179,37,0.4);
+        }
+        .trust-icon-circle {
+            width: 52px; height: 52px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 1.3rem;
+        }
+
+        /* ── 15. TEAM / GOVERNANCE SECTION ──────────────── */
+        .team-section-bg {
+            background: #fff;
+        }
+        .team-ability-card {
+            background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+            border-radius: var(--card-radius);
+            border: 1px solid rgba(15,52,96,0.07);
+            box-shadow: 0 4px 20px rgba(15,52,96,0.05);
+            transition: var(--transition);
+        }
+        .team-ability-card:hover {
+            box-shadow: 0 20px 48px rgba(15,52,96,0.1);
+            transform: translateY(-4px);
+        }
+        .team-ability-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid rgba(15,52,96,0.06);
+            transition: var(--transition);
+        }
+        .team-ability-item:hover {
+            border-color: rgba(230,179,37,0.3);
+            box-shadow: 0 4px 16px rgba(15,52,96,0.07);
+        }
+
+        /* ── 16. CONTACT SECTION UPGRADE ────────────────── */
+        #contact {
+            background: linear-gradient(160deg, #F0F4FF 0%, #E8EDF8 100%);
+        }
+        .contact-info-card {
+            background: #fff;
+            border-radius: var(--card-radius);
+            padding: 24px;
+            border: 1px solid rgba(15,52,96,0.07);
+            box-shadow: 0 4px 16px rgba(15,52,96,0.05);
+            transition: var(--transition);
+        }
+        .contact-info-card:hover {
+            transform: translateX(6px);
+            box-shadow: 0 12px 32px rgba(15,52,96,0.1);
+            border-color: rgba(230,179,37,0.3);
+        }
+        .contact-form-upgrade {
+            background: #fff;
+            border-radius: var(--card-radius);
+            padding: 40px;
+            box-shadow: 0 8px 40px rgba(15,52,96,0.08);
+            border: 1px solid rgba(15,52,96,0.06);
+        }
+        .form-input-upgrade {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid rgba(15,52,96,0.1);
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.92rem;
+            transition: all 0.25s ease;
+            background: #fafbff;
+            color: #0F3460;
+            outline: none;
+        }
+        .form-input-upgrade:focus {
+            border-color: #1A73E8;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(26,115,232,0.1);
+        }
+        .form-input-upgrade::placeholder { color: rgba(15,52,96,0.35); }
+        .form-label-upgrade {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #0F3460;
+            margin-bottom: 6px;
+            display: block;
+            letter-spacing: 0.04em;
+        }
+        .btn-submit-upgrade {
+            background: linear-gradient(135deg, #0F3460 0%, #1A73E8 100%);
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
+            padding: 14px 36px;
+            width: 100%;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 16px rgba(26,115,232,0.3);
+        }
+        .btn-submit-upgrade:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(26,115,232,0.4);
+        }
+        .btn-submit-upgrade:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+        /* ── 17. FOOTER UPGRADE ──────────────────────────── */
+        footer {
+            background: linear-gradient(160deg, #060d1f 0%, #0a1628 100%) !important;
+            border-top: 1px solid rgba(230,179,37,0.2);
+        }
+        .footer-brand-text {
+            background: linear-gradient(90deg, #E6B325, #fff, #E6B325);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmerText 5s linear infinite;
+        }
+        .footer-link {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.88rem;
+            transition: color 0.25s ease;
+            display: block;
+            padding: 3px 0;
+        }
+        .footer-link:hover { color: #E6B325; }
+        .footer-social-btn {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        .footer-social-btn:hover {
+            background: rgba(230,179,37,0.15);
+            border-color: rgba(230,179,37,0.5);
+            color: #E6B325;
+            transform: translateY(-3px);
+        }
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+        }
+
+        /* ── 18. SCROLL REVEAL ───────────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
+        .delay-1 { transition-delay: 0.1s !important; }
+        .delay-2 { transition-delay: 0.2s !important; }
+        .delay-3 { transition-delay: 0.3s !important; }
+        .delay-4 { transition-delay: 0.4s !important; }
+
+        /* ── 19. COMPLIANCE / RISK SECTION ──────────────── */
+        .compliance-section-bg {
+            background: linear-gradient(135deg, #f8faff 0%, #eef2ff 100%);
+        }
+        .compliance-item {
+            background: #fff;
+            border-radius: 14px;
+            padding: 20px 24px;
+            border: 1px solid rgba(15,52,96,0.07);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: var(--transition);
+        }
+        .compliance-item:hover {
+            box-shadow: 0 8px 24px rgba(15,52,96,0.08);
+            border-color: rgba(26,115,232,0.2);
+            transform: translateX(4px);
+        }
+        .compliance-icon {
+            width: 44px; height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0F3460, #1a4a8a);
+            color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(15,52,96,0.3);
+        }
+
+        /* ── 20. MARQUEE / TICKER UPGRADE ───────────────── */
+        .rwa-ticker {
+            background: linear-gradient(90deg, #060d1f 0%, #0d2347 50%, #060d1f 100%) !important;
+            border-bottom: 1px solid rgba(230,179,37,0.25);
+        }
+        .ticker-item {
+            border-right-color: rgba(230,179,37,0.2) !important;
+        }
+
+        /* ── 21. FAQ UPGRADE ─────────────────────────────── */
+        #faq {
+            background: linear-gradient(180deg, #f8faff 0%, #f0f4ff 100%);
+        }
+        .faq-item-v2 {
+            background: #fff;
+            border-radius: 14px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(15,52,96,0.07);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .faq-item-v2:hover {
+            border-color: rgba(230,179,37,0.3);
+            box-shadow: 0 4px 20px rgba(15,52,96,0.06);
+        }
+        .faq-item-v2.active {
+            border-color: rgba(26,115,232,0.25);
+            box-shadow: 0 8px 28px rgba(15,52,96,0.08);
+        }
+        .faq-question-v2 {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #0F3460;
+        }
+        .faq-icon-v2 {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f0f4ff, #e8eeff);
+            border: 1px solid rgba(15,52,96,0.1);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition);
+            color: #0F3460;
+        }
+        .faq-item-v2.active .faq-icon-v2 {
+            background: linear-gradient(135deg, #E6B325, #f5c842);
+            color: #0F3460;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(230,179,37,0.35);
+            transform: rotate(45deg);
+        }
+        .faq-answer-v2 {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.16,1,0.3,1), padding 0.3s ease;
+            padding: 0 24px;
+            color: #4b5563;
+            line-height: 1.7;
+        }
+        .faq-item-v2.active .faq-answer-v2 {
+            max-height: 400px;
+            padding-bottom: 20px;
+        }
+
+        /* ── 22. MISC UTILITIES ──────────────────────────── */
+        .gold-text { color: #E6B325; }
+        .gold-bg { background: linear-gradient(135deg, #E6B325, #f5c842); }
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(230,179,37,0.12), rgba(26,115,232,0.08));
+            border: 1px solid rgba(230,179,37,0.3);
+            border-radius: 999px;
+            padding: 4px 14px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #E6B325;
+            margin-bottom: 12px;
+        }
+        .dot-separator {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: #E6B325;
+            display: inline-block;
+            margin: 0 8px;
+            vertical-align: middle;
+            box-shadow: 0 0 6px rgba(230,179,37,0.5);
+        }
     </style>
 </head>
 
 <body class="bg-light font-inter text-dark">
+    <!-- Cookie 同意橫幅（PDPO/GDPR 合規）-->
+    <div id="cookieBanner">
+        <div class="container mx-auto px-4 md:px-8 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-start gap-3 text-white">
+                <i class="fa fa-shield text-secondary text-xl mt-0.5 flex-shrink-0"></i>
+                <p class="text-sm text-gray-300">
+                    本網站使用 Cookie 及類似技術以改善您的瀏覽體驗、分析網站流量，並提供個人化內容。
+                    繼續使用本網站即表示您同意我們的
+                    <a href="#" class="text-secondary hover:underline">隱私政策</a>。
+                    本平台依香港個人資料私隱條例（PDPO）運作。
+                </p>
+            </div>
+            <div class="flex gap-3 flex-shrink-0">
+                <button onclick="declineCookies()" class="px-4 py-2 text-sm text-gray-400 border border-gray-600 rounded-full hover:border-gray-400 transition-colors">
+                    僅必要 Cookie
+                </button>
+                <button onclick="acceptCookies()" class="px-6 py-2 text-sm bg-secondary text-primary font-semibold rounded-full hover:bg-opacity-90 transition-all">
+                    接受所有
+                </button>
+            </div>
+        </div>
+    </div>
     <!-- 進度條 -->
     <div class="progress-bar" id="progressBar"></div>
 
+    <!-- RWA 市場數據即時橫幅（來源：bybanx.com 數據） -->
+    <div class="rwa-ticker text-white text-xs py-2 overflow-hidden relative" style="margin-top:0">
+        <div class="flex items-center whitespace-nowrap animate-marquee" id="tickerContent">
+            <span class="ticker-item"><i class="fa fa-globe text-secondary"></i><strong>全球 RWA 市場規模：</strong>16 萬億美元</span>
+            <span class="ticker-item"><i class="fa fa-shopping-bag text-secondary"></i><strong>消費級資產市場：</strong>2.5 萬億美元</span>
+            <span class="ticker-item"><i class="fa fa-cubes text-secondary"></i><strong>場景化 NFT 佔比：</strong>42%</span>
+            <span class="ticker-item"><i class="fa fa-line-chart text-secondary"></i><strong>BYB 總供應量：</strong>13 億（永不增發）</span>
+            <span class="ticker-item"><i class="fa fa-shield text-secondary"></i><strong>鏈上部署：</strong>BSC 主網</span>
+            <span class="ticker-item"><i class="fa fa-check-circle text-secondary"></i><strong>核心資產：</strong>演唱會 · 影視 · 康旅 · 東江泉</span>
+            <span class="ticker-item"><i class="fa fa-globe text-secondary"></i><strong>全球 RWA 市場規模：</strong>16 萬億美元</span>
+            <span class="ticker-item"><i class="fa fa-shopping-bag text-secondary"></i><strong>消費級資產市場：</strong>2.5 萬億美元</span>
+            <span class="ticker-item"><i class="fa fa-cubes text-secondary"></i><strong>場景化 NFT 佔比：</strong>42%</span>
+            <span class="ticker-item"><i class="fa fa-line-chart text-secondary"></i><strong>BYB 總供應量：</strong>13 億（永不增發）</span>
+            <span class="ticker-item"><i class="fa fa-shield text-secondary"></i><strong>鏈上部署：</strong>BSC 主網</span>
+            <span class="ticker-item"><i class="fa fa-check-circle text-secondary"></i><strong>核心資產：</strong>演唱會 · 影視 · 康旅 · 東江泉</span>
+        </div>
+    </div>
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee { animation: marquee 30s linear infinite; }
+    </style>
+
     <!-- 導航欄 -->
-    <nav id="mainNav" class="fixed w-full z-50 transition-all duration-300 py-4">
+    <nav id="mainNav" class="fixed w-full z-50 transition-all duration-300 py-3">
         <div class="container mx-auto px-4 md:px-8">
             <div class="flex justify-between items-center">
-                <!-- 修复LOGO链接，点击返回首页 -->
-                <a href="/" class="flex items-center space-x-2">
-                    <img src="images/byb-logo.png" alt="BYB Logo" class="byb-logo">
-                    <span class="text-white font-bold text-xl">Bybanx</span>
+                <!-- LOGO -->
+                <a href="/" class="flex items-center space-x-2.5 group">
+                    <div class="relative">
+                        <img src="images/byb-logo.png" alt="BYB Logo" class="byb-logo transition-transform duration-300 group-hover:scale-110">
+                        <span class="absolute -inset-1 rounded-full bg-secondary opacity-0 group-hover:opacity-20 blur-sm transition-opacity duration-300"></span>
+                    </div>
+                    <span class="text-white font-bold text-xl tracking-tight">Bybanx<span class="text-secondary">.</span></span>
                 </a>
                 
                 <!-- 桌面導航 -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-white hover:text-secondary transition-colors">關於我們</a>
-                    <a href="#market" class="text-white hover:text-secondary transition-colors">市場分析</a>
-                    <a href="#solution" class="text-white hover:text-secondary transition-colors">解決方案</a>
-                    <a href="#assets" class="text-white hover:text-secondary transition-colors">資產展示</a>
-                    <a href="#token" class="text-white hover:text-secondary transition-colors">代幣模型</a>
-                    <a href="#roadmap" class="text-white hover:text-secondary transition-colors">路線圖</a>
-                    <a href="#contact" class="bg-secondary text-primary px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition-all">聯繫我們</a>
-                    
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#about" class="nav-link-pill">關於我們</a>
+                    <a href="#market" class="nav-link-pill">市場分析</a>
+                    <a href="#solution" class="nav-link-pill">解決方案</a>
+                    <a href="#assets" class="nav-link-pill">資產展示</a>
+                    <a href="#token" class="nav-link-pill">代幣模型</a>
+                    <a href="#roadmap" class="nav-link-pill">路線圖</a>
+                    <a href="#faq" class="nav-link-pill">FAQ</a>
+                    <a href="#contact" class="nav-cta ml-2">聯繫我們</a>
                     <!-- Google翻譯按鈕 -->
-                    <button id="translateBtn" class="translate-button bg-white text-primary p-2 rounded-full hover:bg-gray-100 flex items-center justify-center">
+                    <button id="translateBtn" class="translate-button ml-2 bg-white bg-opacity-10 border border-white border-opacity-20 text-white p-2 rounded-full hover:bg-opacity-20 flex items-center justify-center transition-all">
                         <i class="fa fa-language"></i>
                     </button>
-                    <!-- Google翻譯選擇器容器 -->
                     <div id="google_translate_element"></div>
                 </div>
                 
                 <!-- 移動端菜單按鈕 -->
-                <div class="md:hidden flex items-center space-x-4">
-                    <!-- 移動端Google翻譯按鈕 -->
-                    <button id="mobileTranslateBtn" class="translate-button bg-white text-primary p-2 rounded-full hover:bg-gray-100 flex items-center justify-center">
+                <div class="md:hidden flex items-center space-x-3">
+                    <button id="mobileTranslateBtn" class="translate-button bg-white bg-opacity-10 border border-white border-opacity-20 text-white p-2 rounded-full hover:bg-opacity-20 flex items-center justify-center transition-all">
                         <i class="fa fa-language"></i>
                     </button>
-                    <button id="menuBtn" class="text-white text-2xl">
+                    <button id="menuBtn" class="text-white text-2xl p-1">
                         <i class="fa fa-bars"></i>
                     </button>
                 </div>
@@ -236,80 +1419,116 @@
         </div>
         
         <!-- 移動端導航菜單 -->
-        <div id="mobileMenu" class="md:hidden hidden bg-primary bg-opacity-95 bg-blur mt-4">
-            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-                <a href="#about" class="text-white hover:text-secondary transition-colors py-2 border-b border-gray-700">關於我們</a>
-                <a href="#market" class="text-white hover:text-secondary transition-colors py-2 border-b border-gray-700">市場分析</a>
-                <a href="#solution" class="text-white hover:text-secondary transition-colors py-2 border-b border-gray-700">解決方案</a>
-                <a href="#assets" class="text-white hover:text-secondary transition-colors py-2 border-b border-gray-700">資產展示</a>
-                <a href="#token" class="text-white hover:text-secondary transition-colors py-2 border-b border-gray-700">代幣模型</a>
-                <a href="#roadmap" class="text-white hover:text-secondary transition-colors py-2 border-b border-gray-700">路線圖</a>
-                <a href="#contact" class="bg-secondary text-primary px-6 py-3 rounded-full font-medium text-center hover:bg-opacity-90 transition-all">聯繫我們</a>
+        <div id="mobileMenu" class="md:hidden hidden mt-3" style="background:rgba(6,13,31,0.97);backdrop-filter:blur(20px);border-top:1px solid rgba(230,179,37,0.2);">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-1">
+                <a href="#about" class="text-white hover:text-secondary transition-colors py-3 px-4 rounded-xl hover:bg-white hover:bg-opacity-5 border-b border-white border-opacity-5">關於我們</a>
+                <a href="#market" class="text-white hover:text-secondary transition-colors py-3 px-4 rounded-xl hover:bg-white hover:bg-opacity-5 border-b border-white border-opacity-5">市場分析</a>
+                <a href="#solution" class="text-white hover:text-secondary transition-colors py-3 px-4 rounded-xl hover:bg-white hover:bg-opacity-5 border-b border-white border-opacity-5">解決方案</a>
+                <a href="#assets" class="text-white hover:text-secondary transition-colors py-3 px-4 rounded-xl hover:bg-white hover:bg-opacity-5 border-b border-white border-opacity-5">資產展示</a>
+                <a href="#token" class="text-white hover:text-secondary transition-colors py-3 px-4 rounded-xl hover:bg-white hover:bg-opacity-5 border-b border-white border-opacity-5">代幣模型</a>
+                <a href="#roadmap" class="text-white hover:text-secondary transition-colors py-3 px-4 rounded-xl hover:bg-white hover:bg-opacity-5 border-b border-white border-opacity-5">路線圖</a>
+                <a href="#faq" class="text-white hover:text-secondary transition-colors py-3 px-4 rounded-xl hover:bg-white hover:bg-opacity-5 border-b border-white border-opacity-5">FAQ</a>
+                <a href="#contact" class="nav-cta text-center py-3 mt-2">聯繫我們</a>
             </div>
         </div>
     </nav>
 
     <!-- 英雄區域 -->
-    <section class="hero-gradient min-h-screen flex items-center pt-20 pb-16">
-        <div class="container mx-auto px-4 md:px-8">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-12 md:mb-0">
-                    <h5 class="text-secondary font-semibold mb-4 animate-fade-in">BYB2025.COM</h5>
-                    <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white leading-tight mb-6">
-                        文化創意產業<br>
-                        <span class="text-secondary">WEB3應用平台</span>
+    <section class="hero-gradient min-h-screen flex items-center pt-24 pb-20 relative overflow-hidden">
+        <!-- Particle canvas -->
+        <canvas id="heroCanvas"></canvas>
+        <div class="container mx-auto px-4 md:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Left: Text content -->
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="hero-accent-label mb-6 reveal">BYB2025.COM · 香港文化創意 Web3</div>
+                    <h1 class="text-[clamp(2.6rem,5.5vw,4.2rem)] font-black leading-tight mb-6 reveal delay-1">
+                        <span class="text-white">文化創意產業</span><br>
+                        <span class="hero-headline-gradient">WEB3應用平台</span>
                     </h1>
-                    <p class="text-gray-300 text-lg mb-8 max-w-lg">Bybanx 平台的誕生，旨在透過現實文化產業資產上鏈孵化機制，讓真實資產實現數字化、全球化和可流通化，讓用戶成為消費者 + 投資者 + 治理者，讓企業實現低成本融資 + 品牌升級 + 全球曝光。
-</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#solution" class="bg-secondary text-primary px-8 py-3 rounded-full font-semibold text-center hover:bg-opacity-90 transition-all transform hover:-translate-y-1">
+                    <p class="text-gray-300 text-lg leading-relaxed mb-10 max-w-lg reveal delay-2">Bybanx 平台透過現實文化產業資產上鏈孵化機制，讓真實資產實現數字化、全球化和可流通化，讓用戶成為<strong class="text-secondary">消費者＋投資者＋治理者</strong>。</p>
+                    <div class="flex flex-col sm:flex-row gap-4 reveal delay-3">
+                        <a href="#solution" class="btn-primary-glow">
+                            <i class="fa fa-rocket"></i>
                             了解解決方案
                         </a>
-                        <a href="#token" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold text-center hover:bg-white hover:bg-opacity-10 transition-all transform hover:-translate-y-1">
+                        <a href="#token" class="btn-outline-glow">
+                            <i class="fa fa-cubes"></i>
                             代幣經濟模型
                         </a>
                     </div>
-                </div>
-                <div class="md:w-1/2 relative">
-                    <div class="relative z-10 animate-float">
-                        <img src="images/blockchain-asset-illustration.png" alt="區塊鏈與真實資產融合圖示" class="rounded-2xl shadow-2xl">
-                        <div class="absolute -bottom-6 -left-6 bg-secondary text-primary p-4 rounded-lg shadow-lg">
-                            <p class="font-bold">BYB+NFT</p>
-                            <p class="text-sm">真實資產鏈上生態</p>
+                    <!-- Quick stats row -->
+                    <div class="flex flex-wrap gap-6 mt-10 reveal delay-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-black text-secondary">16<span class="text-sm font-semibold">萬億</span></div>
+                            <div class="text-xs text-gray-400 mt-1">全球RWA市場</div>
                         </div>
-                        <div class="absolute -top-6 -right-6 bg-primary border-2 border-secondary p-4 rounded-lg shadow-lg">
-                            <p class="text-white font-bold">“RWA” + Web3</p>
-                            <p class="text-white text-sm">創新融合模式</p>
+                        <div class="w-px bg-white opacity-10 self-stretch"></div>
+                        <div class="text-center">
+                            <div class="text-2xl font-black text-secondary">13<span class="text-sm font-semibold">億</span></div>
+                            <div class="text-xs text-gray-400 mt-1">BYB總供應量</div>
+                        </div>
+                        <div class="w-px bg-white opacity-10 self-stretch"></div>
+                        <div class="text-center">
+                            <div class="text-2xl font-black text-secondary">42<span class="text-sm font-semibold">%</span></div>
+                            <div class="text-xs text-gray-400 mt-1">場景化NFT佔比</div>
+                        </div>
+                        <div class="w-px bg-white opacity-10 self-stretch"></div>
+                        <div class="text-center">
+                            <div class="text-2xl font-black text-secondary">5<span class="text-sm font-semibold">大</span></div>
+                            <div class="text-xs text-gray-400 mt-1">核心資產生態</div>
                         </div>
                     </div>
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-secondary rounded-full filter blur-3xl opacity-20 -z-10"></div>
+                </div>
+                <!-- Right: Illustration -->
+                <div class="md:w-1/2 relative reveal-right">
+                    <div class="relative z-10 animate-float">
+                        <img src="images/blockchain-asset-illustration.png" alt="區塊鏈與真實資產融合圖示" class="rounded-3xl shadow-2xl w-full" style="box-shadow:0 32px 80px rgba(0,0,0,0.5),0 0 60px rgba(26,115,232,0.15);">
+                        <div class="absolute -bottom-5 -left-5 hero-float-card hero-float-card-gold">
+                            <div class="flex items-center gap-2">
+                                <i class="fa fa-shield text-lg"></i>
+                                <div>
+                                    <p class="font-bold text-sm">BYB+NFT</p>
+                                    <p class="text-xs opacity-80">真實資產鏈上生態</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-5 -right-5 hero-float-card hero-float-card-dark">
+                            <div class="flex items-center gap-2">
+                                <i class="fa fa-link text-secondary text-lg"></i>
+                                <div>
+                                    <p class="font-bold text-sm">"RWA" + Web3</p>
+                                    <p class="text-xs opacity-60">創新融合模式</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full -z-10" style="background:radial-gradient(ellipse,rgba(26,115,232,0.2) 0%,transparent 70%);filter:blur(40px);"></div>
                 </div>
             </div>
             
-            <!-- 核心優勢 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
-                <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl border border-white border-opacity-20 transform transition-all hover:-translate-y-2">
-                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+            <!-- 核心優勢 cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+                <div class="hero-adv-card p-6 reveal delay-1">
+                    <div class="hero-adv-icon mb-4">
                         <i class="fa fa-shield text-primary text-xl"></i>
                     </div>
-                    <h3 class="text-white text-xl font-semibold mb-2">真實資產錨定</h3>
-                    <p class="text-gray-300">以文化產業真實世界資產為價值支撐，確保生態穩定發展。</p>
+                    <h3 class="text-white text-lg font-bold mb-2">真實資產錨定</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">以文化產業真實世界資產為價值支撐，確保生態穩定發展。</p>
                 </div>
-                
-                <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl border border-white border-opacity-20 transform transition-all hover:-translate-y-2">
-                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+                <div class="hero-adv-card p-6 reveal delay-2">
+                    <div class="hero-adv-icon mb-4">
                         <i class="fa fa-cubes text-primary text-xl"></i>
                     </div>
-                    <h3 class="text-white text-xl font-semibold mb-2">多元生態融合</h3>
-                    <p class="text-gray-300">整合NFT、DAO治理、鏈遊、社交積分，構建完整Web3應用生態。</p>
+                    <h3 class="text-white text-lg font-bold mb-2">多元生態融合</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">整合NFT、DAO治理、鏈遊、社交積分，構建完整Web3應用生態。</p>
                 </div>
-                
-                <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl border border-white border-opacity-20 transform transition-all hover:-translate-y-2">
-                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+                <div class="hero-adv-card p-6 reveal delay-3">
+                    <div class="hero-adv-icon mb-4">
                         <i class="fa fa-line-chart text-primary text-xl"></i>
                     </div>
-                    <h3 class="text-white text-xl font-semibold mb-2">產業運營標桿</h3>
-                    <p class="text-gray-300">通過自有產業成功運營樹立標桿，輸出專業行業孵化賦能解決方案。</p>
+                    <h3 class="text-white text-lg font-bold mb-2">產業運營標桿</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">通過自有產業成功運營樹立標桿，輸出專業行業孵化賦能解決方案。</p>
                 </div>
             </div>
         </div>
@@ -318,16 +1537,20 @@
     <!-- 關於我們 -->
     <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">關於Bybanx幣友圈</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            <div class="text-center mb-16 reveal">
+                <div class="section-badge">About Us</div>
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-3">關於Bybanx幣友圈</h2>
+                <div class="section-divider mx-auto"></div>
             </div>
             
             <div class="flex flex-col md:flex-row gap-12 items-center">
-                <div class="md:w-1/2">
-                    <img src="images/byb-office.jpg" alt="幣友圈辦公環境或團隊照片" class="rounded-2xl shadow-xl w-full">
+                <div class="md:w-1/2 reveal-left">
+                    <div class="relative group">
+                        <img src="images/byb-office.jpg" loading="lazy" alt="幣友圈辦公環境或團隊照片" class="rounded-3xl shadow-2xl w-full transition-transform duration-500 group-hover:scale-[1.01]" style="box-shadow:0 24px 60px rgba(15,52,96,0.15);">
+                        <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    </div>
                 </div>
-                <div class="md:w-1/2">
+                <div class="md:w-1/2 reveal-right">
                     <h3 class="text-2xl font-bold text-primary mb-6">關於Bybanx幣友圈系敦華集團旗下品牌</h3>
                     <p class="text-gray-700 mb-6 leading-relaxed">
                         敦華集團是一家以文化創意產業為發展方向的投融資機構，總部位於香港屯門。公司在影視出品、演藝製作、康旅研學、文創商貿等領域全力拓展，成功投資主辦和承辦了數百場大型演出，創立"東江泉"品牌並出品多部院線電影和投資運營朱坊文旅康養小鎮。
@@ -339,22 +1562,158 @@
         </div>
     </section>
 
+    <!-- ===== 信任徽章區塊（新增）===== -->
+    <section class="py-14 bg-white border-b border-gray-100" style="background:linear-gradient(180deg,#fff 0%,#f8faff 100%);">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-8">
+                <p class="text-gray-500 text-sm font-medium uppercase tracking-wider">合規與信任保障</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="trust-badge-v2 reveal delay-1">
+                    <div class="trust-icon-circle bg-blue-50">
+                        <i class="fa fa-flag text-primary"></i>
+                    </div>
+                    <p class="text-xs font-bold text-primary">香港註冊品牌</p>
+                    <p class="text-xs text-gray-400 mt-0.5">敦華集團旗下</p>
+                </div>
+                <div class="trust-badge-v2 reveal delay-2">
+                    <div class="trust-icon-circle bg-yellow-50">
+                        <i class="fa fa-shield text-secondary"></i>
+                    </div>
+                    <p class="text-xs font-bold text-primary">SPV 架構合規</p>
+                    <p class="text-xs text-gray-400 mt-0.5">資產隔離保護</p>
+                </div>
+                <div class="trust-badge-v2 reveal delay-3">
+                    <div class="trust-icon-circle bg-green-50">
+                        <i class="fa fa-user-secret text-green-600"></i>
+                    </div>
+                    <p class="text-xs font-bold text-primary">KYC 白名單制</p>
+                    <p class="text-xs text-gray-400 mt-0.5">合格投資者制度</p>
+                </div>
+                <div class="trust-badge-v2 reveal delay-1">
+                    <div class="trust-icon-circle bg-indigo-50">
+                        <i class="fa fa-code text-indigo-600"></i>
+                    </div>
+                    <p class="text-xs font-bold text-primary">智能合約審計</p>
+                    <p class="text-xs text-gray-400 mt-0.5">第三方驗證中</p>
+                </div>
+                <div class="trust-badge-v2 reveal delay-2">
+                    <div class="trust-icon-circle bg-purple-50">
+                        <i class="fa fa-balance-scale text-purple-600"></i>
+                    </div>
+                    <p class="text-xs font-bold text-primary">PDPO 合規</p>
+                    <p class="text-xs text-gray-400 mt-0.5">香港私隱條例</p>
+                </div>
+                <div class="trust-badge-v2 reveal delay-3">
+                    <div class="trust-icon-circle bg-orange-50">
+                        <i class="fa fa-link text-orange-500"></i>
+                    </div>
+                    <p class="text-xs font-bold text-primary">BSC 鏈上透明</p>
+                    <p class="text-xs text-gray-400 mt-0.5">合約地址公示</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 平台生態入口（bybanx.com 對接）===== -->
+    <section class="py-14 bg-gradient-to-r from-primary to-dark text-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold mb-2">Bybanx 雙平台生態</h2>
+                <p class="text-gray-300 text-sm">白皮書入口 × 平台管理系統 × 官方社群 — 三位一體的完整生態</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 白皮書 -->
+                <a href="https://patch-parcel-83f.notion.site/BYB-28348b182d8a80c1b09bc1d2e33c45da?source=copy_link" target="_blank" class="platform-link-card p-6 block group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-secondary bg-opacity-20 rounded-xl flex items-center justify-center group-hover:bg-opacity-30 transition-all">
+                            <i class="fa fa-file-text text-secondary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">白皮書 v1.0</h3>
+                            <p class="text-gray-400 text-xs">BYB 完整技術文件</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">深入了解 BYB 代幣經濟模型、技術架構、NFT 設計及 DAO 治理機制的完整文件。</p>
+                    <span class="text-secondary text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                        立即閱讀 <i class="fa fa-arrow-right"></i>
+                    </span>
+                </a>
+                <!-- 平台系統 -->
+                <a href="https://bybanx.com/" target="_blank" class="platform-link-card p-6 block group" style="border-color:rgba(230,179,37,0.6);">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-secondary bg-opacity-20 rounded-xl flex items-center justify-center group-hover:bg-opacity-30 transition-all">
+                            <i class="fa fa-desktop text-secondary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Bybanx 平台</h3>
+                            <span class="bg-secondary text-primary text-xs font-bold px-2 py-0.5 rounded-full">即將開放</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">NFT 鑄造、DAO 投票、RWA 資產管理、GameFi 入口 — 一站式 Web3 平台正式上線倒計時。</p>
+                    <span class="text-secondary text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                        進入平台 <i class="fa fa-arrow-right"></i>
+                    </span>
+                </a>
+                <!-- 社群 -->
+                <a href="https://t.me/BYBANX" target="_blank" class="platform-link-card p-6 block group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-secondary bg-opacity-20 rounded-xl flex items-center justify-center group-hover:bg-opacity-30 transition-all">
+                            <i class="fa fa-telegram text-secondary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">官方社群</h3>
+                            <p class="text-gray-400 text-xs">Telegram 即時資訊</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">加入 Bybanx 官方 Telegram 社群，獲取最新動態、搶先參與 NFT 白名單及社群治理。</p>
+                    <span class="text-secondary text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                        立即加入 <i class="fa fa-arrow-right"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- 市場分析 -->
     <section id="market" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">市場分析與行業背景</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">全球數位資產市場正在經歷快速變革，真實資產鏈上化成為新的發展趨勢</p>
+            <div class="text-center mb-16 reveal">
+                <div class="section-badge">Market Analysis</div>
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-3">市場分析與行業背景</h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-500 max-w-3xl mx-auto">全球數位資產市場正在經歷快速變革，真實資產鏈上化成為新的發展趨勢</p>
             </div>
-            
+
+            <!-- Three Core Data Cards — upgraded -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <div class="stat-card stat-card-1 reveal delay-1">
+                    <div class="stat-number stat-number-big mb-1 stat-number" data-target="16" data-suffix=" 萬億">0</div>
+                    <div class="text-secondary font-bold text-base mb-2">美元</div>
+                    <p class="text-gray-700 font-semibold">全球 RWA 市場總規模</p>
+                    <p class="text-gray-400 text-xs mt-2">數字化趨勢推動跨鏈交易增長</p>
+                </div>
+                <div class="stat-card stat-card-2 reveal delay-2">
+                    <div class="stat-number stat-number-big mb-1" data-target="2.5" data-suffix=" 萬億">0</div>
+                    <div class="text-secondary font-bold text-base mb-2">美元</div>
+                    <p class="text-gray-700 font-semibold">消費級資產市場規模</p>
+                    <p class="text-gray-400 text-xs mt-2">文娛文創稀缺消費級 RWA 生態</p>
+                </div>
+                <div class="stat-card stat-card-3 reveal delay-3">
+                    <div class="stat-number stat-number-big mb-1" data-target="42" data-suffix="%">0</div>
+                    <div class="text-secondary font-bold text-base mb-2">佔比</div>
+                    <p class="text-gray-700 font-semibold">場景化 NFT 市場佔比</p>
+                    <p class="text-gray-400 text-xs mt-2">功能型 NFT 成市場主流趨勢</p>
+                </div>
+            </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
                 <div>
                     <h3 class="text-2xl font-bold text-primary mb-6">全球數位資產規模</h3>
-                    <div class="bg-white p-6 rounded-xl shadow-lg mb-6">
+                    <div class="chart-container-upgrade mb-6">
                         <canvas id="marketChart" height="300"></canvas>
                     </div>
-                    <p class="text-gray-600 text-sm italic">數據來源：行業研究報告，2025年預測</p>
+                    <p class="text-gray-600 text-sm italic">數據來源：RWA.xyz / BCG 研究報告 / bybanx.com 平台數據，2025年</p>
                 </div>
                 
                 <div>
@@ -366,8 +1725,8 @@
                     
                     <div class="space-y-4 mt-8">
                         <div class="flex items-start">
-                            <div class="bg-secondary text-primary p-2 rounded-full mr-4 mt-1">
-                                <i class="fa fa-check"></i>
+                            <div class="icon-box icon-box-secondary mr-4 mt-1" style="width:36px;height:36px;border-radius:10px;">
+                                <i class="fa fa-check text-sm"></i>
                             </div>
                             <div>
                                 <h4 class="font-semibold text-primary">填補市場空白</h4>
@@ -376,8 +1735,8 @@
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="bg-secondary text-primary p-2 rounded-full mr-4 mt-1">
-                                <i class="fa fa-check"></i>
+                            <div class="icon-box icon-box-secondary mr-4 mt-1" style="width:36px;height:36px;border-radius:10px;">
+                                <i class="fa fa-check text-sm"></i>
                             </div>
                             <div>
                                 <h4 class="font-semibold text-primary">精准切入痛點</h4>
@@ -386,8 +1745,8 @@
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="bg-secondary text-primary p-2 rounded-full mr-4 mt-1">
-                                <i class="fa fa-check"></i>
+                            <div class="icon-box icon-box-secondary mr-4 mt-1" style="width:36px;height:36px;border-radius:10px;">
+                                <i class="fa fa-check text-sm"></i>
                             </div>
                             <div>
                                 <h4 class="font-semibold text-primary">合規創新並行</h4>
@@ -401,24 +1760,22 @@
     </section>
 
     <!-- 使命與願景 -->
-    <section class="py-20 bg-primary text-white">
+    <section class="py-20 mission-vision-section text-white">
         <div class="container mx-auto px-4 md:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="bg-white bg-opacity-10 p-8 rounded-2xl backdrop-blur-sm">
-                    <div class="w-16 h-16 bg-secondary text-primary rounded-full flex items-center justify-center mb-6">
-                        <i class="fa fa-compass text-2xl"></i>
+                <div class="glass-card-dark p-8 reveal-left">
+                    <div class="icon-box icon-box-secondary mb-6">
+                        <i class="fa fa-compass text-primary text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-6">我們的使命</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        借助區塊鏈技術實現真實資產權益上鏈，讓用戶從單純消費者轉變為共治者與收益共享者。重塑用戶與資產的關係，構建基於區塊鏈技術的新型價值分配體系。
-                    </p>
+                    <h3 class="text-2xl font-bold mb-4">我們的使命</h3>
+                    <p class="text-gray-300 leading-relaxed">借助區塊鏈技術實現真實資產權益上鏈，讓用戶從單純消費者轉變為共治者與收益共享者。重塑用戶與資產的關係，構建基於區塊鏈技術的新型價值分配體系。</p>
                 </div>
                 
-                <div class="bg-white bg-opacity-10 p-8 rounded-2xl backdrop-blur-sm">
-                    <div class="w-16 h-16 bg-secondary text-primary rounded-full flex items-center justify-center mb-6">
-                        <i class="fa fa-lightbulb-o text-2xl"></i>
+                <div class="glass-card-dark p-8 reveal-right">
+                    <div class="icon-box icon-box-secondary mb-6">
+                        <i class="fa fa-lightbulb-o text-primary text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-6">我們的願景</h3>
+                    <h3 class="text-2xl font-bold mb-4">我們的願景</h3>
                     <p class="text-gray-300 leading-relaxed">成為全球領先的真實資產鏈上化 “RWA” +NFT+DAO +GameFi+SocialFi平台，推動文娛、文創消費等更多場景數位化，並輸出專業的行業孵化服務。</p>
                 </div>
             </div>
@@ -426,41 +1783,36 @@
     </section>
 
     <!-- 解決方案概述 -->
-    <section id="solution" class="py-20 bg-white">
+    <section id="solution" class="py-20" style="background:linear-gradient(180deg,#fff 0%,#f8faff 100%);">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">解決方案概述</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">BYB構建多元化業務模組，打造覆蓋線上線下的完整生態閉環</p>
+            <div class="text-center mb-16 reveal">
+                <div class="section-badge">Solutions</div>
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-3">解決方案概述</h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-500 max-w-3xl mx-auto">BYB構建多元化業務模組，打造覆蓋線上線下的完整生態閉環</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <div class="bg-gray-50 rounded-xl p-8 shadow-sm card-hover">
-                    <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center mb-6">
-                        <i class="fa fa-film text-2xl"></i>
+                <div class="solution-card reveal delay-1" style="--stripe:linear-gradient(90deg,#0F3460,#1A73E8);">
+                    <div class="icon-box icon-box-primary mb-6">
+                        <i class="fa fa-film text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-primary mb-4">文娛領域</h3>
-                    <p class="text-gray-600">
-                        與頭部演唱演唱會、電影、短劇、音樂競技等項目合作，將票房收益與NFT權益深度綁定，為粉絲創造更多價值。
-                    </p>
+                    <p class="text-gray-500 leading-relaxed">與頭部演唱會、電影、短劇、音樂競技等項目合作，將票房收益與NFT權益深度綁定，為粉絲創造更多價值。</p>
                 </div>
-                
-                <div class="bg-gray-50 rounded-xl p-8 shadow-sm card-hover">
-                    <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center mb-6">
-                        <i class="fa fa-shopping-bag text-2xl"></i>
+                <div class="solution-card reveal delay-2" style="--stripe:linear-gradient(90deg,#E6B325,#f5c842);">
+                    <div class="icon-box icon-box-secondary mb-6">
+                        <i class="fa fa-shopping-bag text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-primary mb-4">文創板塊</h3>
-                    <p class="text-gray-600">
-                        以東江泉品牌為起點，延伸至康養小鎮、影視基地等實體產業，構建虛實結合的價值網路，實現資產數位化。
-                    </p>
+                    <p class="text-gray-500 leading-relaxed">以東江泉品牌為起點，延伸至康養小鎮、影視基地等實體產業，構建虛實結合的價值網路，實現資產數位化。</p>
                 </div>
-                
-                <div class="bg-gray-50 rounded-xl p-8 shadow-sm card-hover">
-                    <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center mb-6">
-                        <i class="fa fa-cubes text-2xl"></i>
+                <div class="solution-card reveal delay-3" style="--stripe:linear-gradient(90deg,#1A73E8,#4a9eff);">
+                    <div class="icon-box icon-box-accent mb-6">
+                        <i class="fa fa-cubes text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-primary mb-4">多元化業務模組</h3>
-                    <p class="text-gray-600">整合 NFT、DAO 治理、鏈遊（GameFi）、社交積分（SocialFi）及未來企業 “RWA” 孵化服務，構建完整生態。</p>
+                    <p class="text-gray-500 leading-relaxed">整合 NFT、DAO 治理、鏈遊（GameFi）、社交積分（SocialFi）及未來企業 "RWA" 孵化服務，構建完整生態。</p>
                 </div>
             </div>
             
@@ -505,103 +1857,122 @@
     <!-- 資產展示 -->
     <section id="assets" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">核心資產展示</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">多元化的真實資產構成BYB生態的價值基礎</p>
+            <div class="text-center mb-16 reveal">
+                <div class="section-badge">Core Assets</div>
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-3">核心資產展示</h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-500 max-w-3xl mx-auto">多元化的真實資產構成BYB生態的價值基礎</p>
             </div>
             
             <!-- 資產分類標籤 -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button class="asset-tab active px-6 py-2 rounded-full bg-primary text-white font-medium" data-category="all">全部資產</button>
-                <button class="asset-tab px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium" data-category="performance">演藝資產</button>
-                <button class="asset-tab px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium" data-category="film">影視資產</button>
-                <button class="asset-tab px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium" data-category="travel">康旅資產</button>
-                <button class="asset-tab px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium" data-category="entertainment">文娛資產</button>
-                <button class="asset-tab px-6 py-2 rounded-full bg-gray-200 text-gray-700 font-medium" data-category="cultural">文創資產</button>
+            <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
+                <button class="asset-tab asset-tab-v2 active" data-category="all">全部資產</button>
+                <button class="asset-tab asset-tab-v2" data-category="performance">演藝資產</button>
+                <button class="asset-tab asset-tab-v2" data-category="film">影視資產</button>
+                <button class="asset-tab asset-tab-v2" data-category="travel">康旅資產</button>
+                <button class="asset-tab asset-tab-v2" data-category="entertainment">文娛資產</button>
+                <button class="asset-tab asset-tab-v2" data-category="cultural">文創資產</button>
             </div>
             
             <!-- 資產卡片 -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 演藝資產1 -->
-                <div class="asset-card bg-white rounded-xl overflow-hidden shadow-md card-hover" data-category="performance">
-                    <img src="images/concert-2025.jpg" alt="東江泉之夜2025演唱會" class="w-full h-56 object-cover">
+                <div class="asset-card asset-card-upgrade" data-category="performance">
+                    <div class="asset-img-wrap">
+                        <img src="images/concert-2025.jpg" loading="lazy" alt="東江泉之夜2025演唱會" class="w-full h-56 object-cover">
+                        <div class="asset-img-overlay"></div>
+                    </div>
                     <div class="p-6">
-                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">演藝資產</span>
+                        <span class="asset-tag">演藝資產</span>
                         <h3 class="text-xl font-bold text-primary mt-3 mb-2">東江泉之夜2025演唱會</h3>
                         <p class="text-gray-600 mb-4">採用拼盤演藝，票房及品牌效益雙收，為參與者帶來豐富收益。</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-secondary font-bold">高收益潛力</span>
+                            <span class="asset-value-badge">高收益潛力</span>
                             <i class="fa fa-ticket text-primary"></i>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 演藝資產2 -->
-                <div class="asset-card bg-white rounded-xl overflow-hidden shadow-md card-hover" data-category="performance">
-                    <img src="images/tsai-chin-concert.jpg" alt="蔡琴2026告別演唱會" class="w-full h-56 object-cover">
+                <div class="asset-card asset-card-upgrade" data-category="performance">
+                    <div class="asset-img-wrap">
+                        <img src="images/tsai-chin-concert.jpg" loading="lazy" alt="蔡琴2026告別演唱會" class="w-full h-56 object-cover">
+                        <div class="asset-img-overlay"></div>
+                    </div>
                     <div class="p-6">
-                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">演藝資產</span>
+                        <span class="asset-tag">演藝資產</span>
                         <h3 class="text-xl font-bold text-primary mt-3 mb-2">蔡琴2026不要告別演唱會</h3>
                         <p class="text-gray-600 mb-4">票務收益權稀缺性保障高增長，具有極高的收藏和投資價值。</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-secondary font-bold">稀缺性資產</span>
+                            <span class="asset-value-badge">稀缺性資產</span>
                             <i class="fa fa-ticket text-primary"></i>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 影視資產 -->
-                <div class="asset-card bg-white rounded-xl overflow-hidden shadow-md card-hover" data-category="film">
-                    <img src="images/movie-yangjiaoshui.jpg" alt="《羊角水堡》電影" class="w-full h-56 object-cover">
+                <div class="asset-card asset-card-upgrade" data-category="film">
+                    <div class="asset-img-wrap">
+                        <img src="images/movie-yangjiaoshui.jpg" loading="lazy" alt="《羊角水堡》電影" class="w-full h-56 object-cover">
+                        <div class="asset-img-overlay"></div>
+                    </div>
                     <div class="p-6">
-                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">影視資產</span>
+                        <span class="asset-tag">影視資產</span>
                         <h3 class="text-xl font-bold text-primary mt-3 mb-2">《羊角水堡》電影</h3>
                         <p class="text-gray-600 mb-4">全球發行影視庫版權池收益權。收益來源覆蓋票房、網路播放、衍生品開發等多元渠道。</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-secondary font-bold">多元收益</span>
+                            <span class="asset-value-badge">多元收益</span>
                             <i class="fa fa-film text-primary"></i>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 康旅資產 -->
-                <div class="asset-card bg-white rounded-xl overflow-hidden shadow-md card-hover" data-category="travel">
-                    <img src="images/resort-town.jpg" alt="瑞金市根源紅色文化教育培訓基地" class="w-full h-56 object-cover">
+                <div class="asset-card asset-card-upgrade" data-category="travel">
+                    <div class="asset-img-wrap">
+                        <img src="images/resort-town.jpg" loading="lazy" alt="瑞金市根源紅色文化教育培訓基地" class="w-full h-56 object-cover">
+                        <div class="asset-img-overlay"></div>
+                    </div>
                     <div class="p-6">
-                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">康旅資產</span>
+                        <span class="asset-tag">康旅資產</span>
                         <h3 class="text-xl font-bold text-primary mt-3 mb-2">朱坊康養文化小鎮</h3>
                         <p class="text-gray-600 mb-4">具備強大接待能力，可同時容納1000人開展活動，已接待超20萬人次參與研學旅行與培訓活動。</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-secondary font-bold">穩定現金流</span>
+                            <span class="asset-value-badge">穩定現金流</span>
                             <i class="fa fa-building text-primary"></i>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 文娛資產1 -->
-                <div class="asset-card bg-white rounded-xl overflow-hidden shadow-md card-hover" data-category="entertainment">
-                    <img src="images/blue-porcelain-orchestra.jpg" alt="青花瓷樂團" class="w-full h-56 object-cover">
+                <div class="asset-card asset-card-upgrade" data-category="entertainment">
+                    <div class="asset-img-wrap">
+                        <img src="images/blue-porcelain-orchestra.jpg" loading="lazy" alt="青花瓷樂團" class="w-full h-56 object-cover">
+                        <div class="asset-img-overlay"></div>
+                    </div>
                     <div class="p-6">
-                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">文娛資產</span>
+                        <span class="asset-tag">文娛資產</span>
                         <h3 class="text-xl font-bold text-primary mt-3 mb-2">青花瓷樂團</h3>
                         <p class="text-gray-600 mb-4">將景德鎮陶瓷文化與音樂藝術深度融合，以青花瓷器樂器奏響瓷韻樂章，每年承接多場高端演出。</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-secondary font-bold">獨特IP價值</span>
+                            <span class="asset-value-badge">獨特IP價值</span>
                             <i class="fa fa-music text-primary"></i>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 文創資產 -->
-                <div class="asset-card bg-white rounded-xl overflow-hidden shadow-md card-hover" data-category="cultural">
-                    <img src="images/dongjiangquan-water.jpg" alt="東江泉品牌" class="w-full h-56 object-cover">
+                <div class="asset-card asset-card-upgrade" data-category="cultural">
+                    <div class="asset-img-wrap">
+                        <img src="images/dongjiangquan-water.jpg" loading="lazy" alt="東江泉品牌" class="w-full h-56 object-cover">
+                        <div class="asset-img-overlay"></div>
+                    </div>
                     <div class="p-6">
-                        <span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full">文創資產</span>
+                        <span class="asset-tag">文創資產</span>
                         <h3 class="text-xl font-bold text-primary mt-3 mb-2">東江泉 天然飲用泉水</h3>
                         <p class="text-gray-600 mb-4">敦華集團榮譽出品，深耕食品飲料領域，以香港及大灣區為銷售重心，預計未來3年銷售額年增長率超15%。</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-secondary font-bold">高增長潛力</span>
+                            <span class="asset-value-badge">高增長潛力</span>
                             <i class="fa fa-tint text-primary"></i>
                         </div>
                     </div>
@@ -615,7 +1986,7 @@
         <div class="container mx-auto px-4 md:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">技術架構</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+                <div class="section-divider mx-auto mb-6"></div>
                 <p class="text-gray-600 max-w-3xl mx-auto">安全、高效、可擴展的技術架構支撐BYB生態系統</p>
             </div>
             
@@ -664,16 +2035,25 @@
     <!-- 代幣經濟模型 -->
     <section id="token" class="py-20 bg-primary text-white">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4">代幣經濟模型</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+            <div class="text-center mb-16 reveal">
+                <div class="section-badge" style="background:rgba(230,179,37,0.15);border-color:rgba(230,179,37,0.4);">Token Model</div>
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-3">代幣經濟模型</h2>
+                <div class="section-divider mx-auto mb-6"></div>
                 <p class="text-gray-300 max-w-3xl mx-auto">BYB代幣是生態系統的核心價值載體與流通媒介</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                    <a href="https://patch-parcel-83f.notion.site/BYB-28348b182d8a80c1b09bc1d2e33c45da?source=copy_link" target="_blank" class="inline-flex items-center gap-2 bg-secondary text-primary px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all transform hover:-translate-y-1 shadow-lg">
+                        <i class="fa fa-file-text"></i> 閱讀完整白皮書 v1.0
+                    </a>
+                    <a href="https://bybanx.com/" target="_blank" class="inline-flex items-center gap-2 border-2 border-secondary text-secondary px-8 py-3 rounded-full font-semibold hover:bg-white hover:bg-opacity-10 transition-all transform hover:-translate-y-1">
+                        <i class="fa fa-desktop"></i> 進入 Bybanx 平台
+                    </a>
+                </div>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- 代幣基本信息 -->
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-                    <div class="flex items-center mb-8 border-b border-gray-700 pb-4">
+                <div class="token-info-card p-8 reveal-left">
+                    <div class="flex items-center mb-6 pb-4" style="border-bottom:1px solid rgba(255,255,255,0.08);">
                         <img src="images/byb-token-logo.png" alt="BYB Logo" class="byb-logo mr-4">
                         <h3 class="text-2xl font-bold">代幣基本信息</h3>
                     </div>
@@ -729,7 +2109,7 @@
                 <!-- 代幣分配和NFT經濟模型 -->
                 <div>
                     <!-- 代幣分配方案 -->
-                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 mb-8 shadow-lg">
+                    <div class="token-info-card p-8 mb-6 reveal-right">
                         <h3 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-700">代幣分配方案</h3>
                         <!-- 扩展宽度，移除右侧空白 -->
                         <div class="h-64 w-full">
@@ -738,7 +2118,7 @@
                     </div>
                     
                     <!-- NFT經濟模型 -->
-                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+                    <div class="token-info-card p-8 reveal-right">
                         <h3 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-700">NFT 經濟模型</h3>
                         <div class="space-y-6 max-h-64 overflow-y-auto scrollbar-hide pr-2">
                             <!-- 治理型NFT -->
@@ -776,9 +2156,9 @@
                             <div class="bg-white bg-opacity-5 p-5 rounded-lg">
                                 <h4 class="font-bold text-secondary mb-3">3. 文創 NFT（1,000張）</h4>
                                 <p class="text-sm text-gray-300">
-                                    具有本板块激励权、本板块投票权、房产住宿折扣、影视探班、康养服务、
-                                    产品品鉴、限量定制水兑换、抽奖新品体验、本板块激励权、本板块投票权、
-                                    代言人出镜等权益
+                                    具備本板塊激勵權、本板塊投票權、房產住宿折扣、影視探班、康養服務、
+                                    產品品鑑、限量定製水兑換、抽獎新品體驗、本板塊激勵權、本板塊投票權、
+                                    代言人出鏡等權益
                                 </p>
                                 <p class="text-xs text-gray-400 mt-2">性質：參與型、會員型</p>
                             </div>
@@ -792,16 +2172,17 @@
     <!-- 資金用途與路線圖 -->
     <section id="roadmap" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">資金用途與發展路線圖</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">透明的資金規劃與清晰的發展路徑</p>
+            <div class="text-center mb-16 reveal">
+                <div class="section-badge">Roadmap</div>
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-3">資金用途與發展路線圖</h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-500 max-w-3xl mx-auto">透明的資金規劃與清晰的發展路徑</p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
                 <div>
                     <h3 class="text-2xl font-bold text-primary mb-8">資金用途計劃</h3>
-                    <div class="bg-white rounded-2xl shadow-md p-6">
+                    <div class="chart-container-upgrade">
                         <div class="h-80">
                             <canvas id="fundAllocationChart"></canvas>
                         </div>
@@ -837,51 +2218,50 @@
                 
                 <div>
                     <h3 class="text-2xl font-bold text-primary mb-8">發展路線圖</h3>
-                    <div class="relative">
-                        <!-- 時間線 -->
-                        <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-primary"></div>
-                        
+                    <div class="space-y-0">
                         <!-- 階段1 -->
-                        <div class="relative pl-16 pb-10">
-                            <div class="absolute left-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">1</div>
-                            <h4 class="text-xl font-bold text-primary mb-2">第一階段：文娛板塊</h4>
-                            <p class="text-gray-600">
-                                推出演唱會票房 NFT、電影票房 NFT，開啟真實票房季度激勵，形成第一批鏈上粉絲經濟。
-                            </p>
+                        <div class="timeline-item reveal delay-1">
+                            <div class="timeline-dot">1</div>
+                            <div class="timeline-line"></div>
+                            <div class="timeline-content">
+                                <h4 class="text-lg font-bold text-primary mb-1">第一階段：文娛板塊</h4>
+                                <p class="text-gray-500 text-sm">推出演唱會票房 NFT、電影票房 NFT，開啟真實票房季度激勵，形成第一批鏈上粉絲經濟。</p>
+                            </div>
                         </div>
-                        
                         <!-- 階段2 -->
-                        <div class="relative pl-16 pb-10">
-                            <div class="absolute left-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">2</div>
-                            <h4 class="text-xl font-bold text-primary mb-2">第二階段：文創板塊</h4>
-                            <p class="text-gray-600">
-                                啟動東江泉礦泉水 NFT，推動康養小鎮房產 NFT、影視基地衍生產業落地，豐富生態場景。
-                            </p>
+                        <div class="timeline-item reveal delay-2">
+                            <div class="timeline-dot">2</div>
+                            <div class="timeline-line"></div>
+                            <div class="timeline-content">
+                                <h4 class="text-lg font-bold text-primary mb-1">第二階段：文創板塊</h4>
+                                <p class="text-gray-500 text-sm">啟動東江泉礦泉水 NFT，推動康養小鎮房產 NFT、影視基地衍生產業落地，豐富生態場景。</p>
+                            </div>
                         </div>
-                        
                         <!-- 階段3 -->
-                        <div class="relative pl-16 pb-10">
-                            <div class="absolute left-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">3</div>
-                            <h4 class="text-xl font-bold text-primary mb-2">第三階段：社交資源平台</h4>
-                            <p class="text-gray-600">
-                                上線 Web3 社交資源，鏈上積分可兌換 NFT、代幣，用戶的社交數據積累可用於後續 DAO 加權。
-                            </p>
+                        <div class="timeline-item reveal delay-3">
+                            <div class="timeline-dot">3</div>
+                            <div class="timeline-line"></div>
+                            <div class="timeline-content">
+                                <h4 class="text-lg font-bold text-primary mb-1">第三階段：社交資源平台</h4>
+                                <p class="text-gray-500 text-sm">上線 Web3 社交資源，鏈上積分可兌換 NFT、代幣，用戶的社交數據積累可用於後續 DAO 加權。</p>
+                            </div>
                         </div>
-                        
                         <!-- 階段4 -->
-                        <div class="relative pl-16 pb-10">
-                            <div class="absolute left-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">4</div>
-                            <h4 class="text-xl font-bold text-primary mb-2">第四階段：鏈遊 GameFi</h4>
-                            <p class="text-gray-600">
-                                BYBNFT、票房 NFT 可在鏈遊中進行產礦、探險等活動，打通鏈遊與真實消費場景。
-                            </p>
+                        <div class="timeline-item reveal delay-4">
+                            <div class="timeline-dot">4</div>
+                            <div class="timeline-line"></div>
+                            <div class="timeline-content">
+                                <h4 class="text-lg font-bold text-primary mb-1">第四階段：鏈遊 GameFi</h4>
+                                <p class="text-gray-500 text-sm">BYBNFT、票房 NFT 可在鏈遊中進行產礦、探險等活動，打通鏈遊與真實消費場景。</p>
+                            </div>
                         </div>
-                        
                         <!-- 階段5 -->
-                        <div class="relative pl-16">
-                            <div class="absolute left-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold">5</div>
-                            <h4 class="text-xl font-bold text-primary mb-2">第五階段：企業 RWA 孵化器</h4>
-                            <p class="text-gray-600">輸出 DAO+NFT+GameFi +SocialFi一體化標準方案，BYBDAO 可投資更多 “實體文化” 項目，形成多資產網路。</p>
+                        <div class="timeline-item reveal delay-1">
+                            <div class="timeline-dot">5</div>
+                            <div class="timeline-content">
+                                <h4 class="text-lg font-bold text-primary mb-1">第五階段：企業 RWA 孵化器</h4>
+                                <p class="text-gray-500 text-sm">輸出 DAO+NFT+GameFi+SocialFi 一體化標準方案，BYBDAO 可投資更多 "實體文化" 項目，形成多資產網路。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -890,17 +2270,18 @@
     </section>
 
     <!-- 團隊與顧問 -->
-    <section class="py-20 bg-white">
+    <section class="py-20 team-section-bg">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">團隊與顧問</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">專業的團隊是項目成功的核心保障</p>
+            <div class="text-center mb-16 reveal">
+                <div class="section-badge">Team & Advisors</div>
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-3">團隊與顧問</h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-500 max-w-3xl mx-auto">專業的團隊是項目成功的核心保障</p>
             </div>
             
             <!-- 團隊能力矩陣 -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="bg-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="team-ability-card p-8 reveal">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mr-4">
                             <i class="fa fa-cogs text-xl"></i>
@@ -958,7 +2339,7 @@
                 </div>
                 
                 <!-- 顧問團隊描述 -->
-                <div class="bg-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="team-ability-card p-8 reveal">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mr-4">
                             <i class="fa fa-lightbulb-o text-xl"></i>
@@ -1003,7 +2384,7 @@
                 <div>
                     <div class="text-center mb-10">
                         <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">社區與治理</h2>
-                        <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                        <div class="section-divider mx-auto"></div>
                     </div>
                     
                     <div class="bg-white rounded-2xl shadow-md p-8">
@@ -1054,7 +2435,7 @@
                 <div>
                     <div class="text-center mb-10">
                         <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">合規結構</h2>
-                        <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                        <div class="section-divider mx-auto"></div>
                     </div>
                     
                     <div class="bg-white rounded-2xl shadow-md p-8">
@@ -1130,7 +2511,7 @@
         <div class="container mx-auto px-4 md:px-8">
             <div class="text-center mb-10">
                 <h2 class="text-2xl font-bold mb-4">風險提示與免責聲明</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                <div class="section-divider mx-auto"></div>
             </div>
             
             <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8">
@@ -1160,20 +2541,95 @@
         </div>
     </section>
 
+    <!-- ===== FAQ 常見問題（新增）===== -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-8 max-w-4xl">
+            <div class="text-center mb-16 reveal">
+                <div class="section-badge">FAQ</div>
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-3">常見問題</h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-500">快速了解 Bybanx 幣友圈 BYB 的核心機制</p>
+            </div>
+            <div class="space-y-2" id="faqContainer">
+                <!-- Q1 -->
+                <div class="faq-item faq-item-v2" onclick="toggleFaq(this)">
+                    <div class="faq-question faq-question-v2">
+                        <span>BYB 代幣如何購買？</span>
+                        <span class="faq-icon faq-icon-v2"><i class="fa fa-plus text-xs"></i></span>
+                    </div>
+                    <div class="faq-answer faq-answer-v2">
+                        <p class="text-gray-600">BYB 代幣目前處於預售白名單階段，正式上線後將可於 Bybanx 平台及合作交易所購買。主網部署後合約地址將通過官網、白皮書 v2.0 及鏈上瀏覽器公佈。如需搶先參與，請加入官方 Telegram 社群 <a href="https://t.me/BYBANX" class="text-accent hover:underline" target="_blank">t.me/BYBANX</a> 獲取最新資訊。</p>
+                    </div>
+                </div>
+                <!-- Q2 -->
+                <div class="faq-item faq-item-v2" onclick="toggleFaq(this)">
+                    <div class="faq-question faq-question-v2">
+                        <span>NFT 持有者如何獲得真實資產收益？</span>
+                        <span class="faq-icon faq-icon-v2"><i class="fa fa-plus text-xs"></i></span>
+                    </div>
+                    <div class="faq-answer faq-answer-v2">
+                        <p class="text-gray-600">演唱會票房、東江泉銷售額、影視版權費等真實收益，由 SPV（特殊目的載體）統一接管。收益分配方案由 DAO 治理投票決定，NFT 持有者依持有等級獲得相應激勵。具體分配周期與比例將在白皮書 v2.0 中詳細說明，不附加固定承諾。</p>
+                    </div>
+                </div>
+                <!-- Q3 -->
+                <div class="faq-item faq-item-v2" onclick="toggleFaq(this)">
+                    <div class="faq-question faq-question-v2">
+                        <span>如何參與 DAO 投票治理？</span>
+                        <span class="faq-icon faq-icon-v2"><i class="fa fa-plus text-xs"></i></span>
+                    </div>
+                    <div class="faq-answer faq-answer-v2">
+                        <p class="text-gray-600">持有治理型 BYB NFT（Crown / Eminence / Ascend 級別）的用戶可參與 DAO 投票。所有重大生態決策，包括回購、合作、新資產投放及收益分配方案，均需通過鏈上投票表決。DAO 設有明確的提案標準、投票周期與通過率設定。Bybanx 平台正式上線後即可操作。</p>
+                    </div>
+                </div>
+                <!-- Q4 -->
+                <div class="faq-item faq-item-v2" onclick="toggleFaq(this)">
+                    <div class="faq-question faq-question-v2">
+                        <span>KYC 認證流程是什麼？</span>
+                        <span class="faq-icon faq-icon-v2"><i class="fa fa-plus text-xs"></i></span>
+                    </div>
+                    <div class="faq-answer faq-answer-v2">
+                        <p class="text-gray-600">Bybanx 平台採用合格投資者白名單制度，用戶需完成 KYC（了解您的客戶）認證方可參與 NFT 購買及 RWA 相關操作。KYC 流程包括身份驗證、居住地確認，符合香港 PDPO 及相關法規要求。私募合同（TPA）支持將在平台正式開放時提供。</p>
+                    </div>
+                </div>
+                <!-- Q5 -->
+                <div class="faq-item faq-item-v2" onclick="toggleFaq(this)">
+                    <div class="faq-question faq-question-v2">
+                        <span>BYB 是否屬於證券或金融投資產品？</span>
+                        <span class="faq-icon faq-icon-v2"><i class="fa fa-plus text-xs"></i></span>
+                    </div>
+                    <div class="faq-answer faq-answer-v2">
+                        <p class="text-gray-600">不是。BYB 及其衍生品均為功能型數位資產，定性為實用型功能通證，非證券、非股票、非理財產品。NFT 功能限於平台訪問、任務解鎖及 DAO 投票，不附加財務屬性。所有治理與激勵均由社區 DAO 決定，無固定收益承諾。</p>
+                    </div>
+                </div>
+                <!-- Q6 -->
+                <div class="faq-item faq-item-v2" onclick="toggleFaq(this)">
+                    <div class="faq-question faq-question-v2">
+                        <span>Bybanx.com 平台與 BYB2025.com 的關係？</span>
+                        <span class="faq-icon faq-icon-v2"><i class="fa fa-plus text-xs"></i></span>
+                    </div>
+                    <div class="faq-answer faq-answer-v2">
+                        <p class="text-gray-600">兩個域名屬於同一品牌生態：BYB2025.com 為 Bybanx 幣友圈的官方白皮書展示網站，提供項目介紹、代幣模型、資產展示等資訊。Bybanx.com 則是正在搭建中的完整 Web3 管理平台，提供 NFT 鑄造、DAO 治理、RWA 資產管理等功能，平台上線後兩端將無縫整合。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 聯繫我們 -->
     <section id="contact" class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">聯繫我們</h2>
-                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">關注我們的社交媒體，獲取最新動態</p>
+            <div class="text-center mb-16 reveal">
+                <div class="section-badge">Contact</div>
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-3">聯繫我們</h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-500 max-w-3xl mx-auto">關注我們的社交媒體，獲取最新動態</p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
                 <!-- 聯繫信息卡片 -->
                 <div class="lg:col-span-2 space-y-6">
                     <!-- 官網信息 -->
-                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="contact-info-card">
                         <div class="flex items-start">
                             <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <i class="fa fa-globe text-xl"></i>
@@ -1186,20 +2642,25 @@
                     </div>
                     
                     <!-- 平台網址信息 -->
-                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="contact-info-card">
                         <div class="flex items-start">
                             <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <i class="fa fa-link text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="font-semibold text-primary text-lg">平台網址</h4>
-                                <p class="text-gray-600 mt-1"><a href="https://bybanx.top/" class="text-accent hover:underline" target="_blank">https://www.bybanx.top/</a></p>
+                                <p class="text-gray-600 mt-1">
+                                        <a href="https://www.bybanx.top/" class="text-accent hover:underline" target="_blank">https://www.bybanx.top/</a>
+                                    </p>
+                                    <p class="text-gray-600 mt-1">
+                                        <a href="https://www.bybanx.com/" class="text-accent hover:underline" target="_blank">https://www.bybanx.com/</a>
+                                    </p>
                             </div>
                         </div>
                     </div>
                     
                     <!-- 郵箱信息 -->
-                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="contact-info-card">
                         <div class="flex items-start">
                             <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <i class="fa fa-envelope text-xl"></i>
@@ -1212,20 +2673,20 @@
                     </div>
                     
                     <!-- Twitter信息 -->
-                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="contact-info-card">
                         <div class="flex items-start">
                             <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <i class="fa fa-twitter text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="font-semibold text-primary text-lg">Twitter</h4>
-                                <p class="text-gray-600 mt-1"><a href="https://x.com/DunhuaGroup" class="text-accent hover:underline" target="_blank">https://x.com/DunhuaGroup</a></p>
+                                <p class="text-gray-600 mt-1"><a href="https://x.com/BYBANX" class="text-accent hover:underline" target="_blank">https://x.com/BYBANX</a></p>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Telegram信息 -->
-                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="contact-info-card">
                         <div class="flex items-start">
                             <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <i class="fa fa-telegram text-xl"></i>
@@ -1238,7 +2699,7 @@
                     </div>
                     
                     <!-- 合約地址信息 -->
-                    <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="contact-info-card">
                         <h4 class="font-semibold text-primary text-lg mb-4">核心合約地址</h4>
                         <p class="text-gray-600">
                             將在主網部署後，通過官網、白皮書 v2.0 及鏈上流覽器公佈
@@ -1283,76 +2744,95 @@
     </section>
 
     <!-- 頁腳 -->
-    <footer class="bg-dark text-white py-12">
+    <footer class="py-16">
         <div class="container mx-auto px-4 md:px-8">
-            <!-- 优化后的简洁页脚布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8">
-                <!-- 品牌信息 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Brand -->
                 <div class="lg:col-span-1">
-                    <div class="flex items-center space-x-2 mb-4">
+                    <div class="flex items-center space-x-2 mb-5">
                         <img src="images/byb-logo-footer.png" alt="BYB Logo" class="byb-logo">
-                        <span class="font-bold text-xl">Bybanx</span>
+                        <span class="font-bold text-xl footer-brand-text">Bybanx</span>
                     </div>
-                    <p class="text-gray-400 text-sm mb-4">真實資產鏈上生態平台，以文化產業真實世界資產為錨定的多元化Web3數位應用生態平台。</p>
-                    <div class="flex space-x-3">
-                        <a href="https://x.com/DunhuaGroup" class="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-all" target="_blank">
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">真實資產鏈上生態平台，以文化產業真實世界資產為錨定的多元化 Web3 數位應用生態平台。</p>
+                    <div class="flex space-x-2">
+                        <a href="https://x.com/BYBANX" class="footer-social-btn" target="_blank" title="Twitter/X">
                             <i class="fa fa-twitter"></i>
                         </a>
-                        <a href="https://t.me/BYB2025COM" class="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-all" target="_blank">
+                        <a href="https://t.me/BYB2025COM" class="footer-social-btn" target="_blank" title="Telegram">
                             <i class="fa fa-telegram"></i>
                         </a>
-                        <a href="https://www.youtube.com/@DUNHUA2016" class="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-all" target="_blank">
+                        <a href="https://www.youtube.com/@DUNHUA2016" class="footer-social-btn" target="_blank" title="YouTube">
                             <i class="fa fa-youtube-play"></i>
+                        </a>
+                        <a href="https://t.me/BYBANX" class="footer-social-btn" target="_blank" title="Telegram Community">
+                            <i class="fa fa-comments"></i>
                         </a>
                     </div>
                 </div>
                 
-                <!-- 快速链接 -->
+                <!-- Quick links -->
                 <div>
-                    <h4 class="font-bold text-base mb-4">快速鏈接</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#about" class="text-gray-400 hover:text-secondary transition-colors">關於我們</a></li>
-                        <li><a href="#market" class="text-gray-400 hover:text-secondary transition-colors">市場分析</a></li>
-                        <li><a href="#solution" class="text-gray-400 hover:text-secondary transition-colors">解決方案</a></li>
-                        <li><a href="#assets" class="text-gray-400 hover:text-secondary transition-colors">資產展示</a></li>
-                        <li><a href="#token" class="text-gray-400 hover:text-secondary transition-colors">代幣模型</a></li>
+                    <h4 class="font-bold text-sm uppercase tracking-wider text-secondary mb-5">快速鏈接</h4>
+                    <ul class="space-y-1">
+                        <li><a href="#about" class="footer-link">關於我們</a></li>
+                        <li><a href="#market" class="footer-link">市場分析</a></li>
+                        <li><a href="#solution" class="footer-link">解決方案</a></li>
+                        <li><a href="#assets" class="footer-link">資產展示</a></li>
+                        <li><a href="#token" class="footer-link">代幣模型</a></li>
+                        <li><a href="#roadmap" class="footer-link">路線圖</a></li>
                     </ul>
                 </div>
                 
-                <!-- 资源中心 -->
+                <!-- Resources -->
                 <div>
-                    <h4 class="font-bold text-base mb-4">資源中心</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#roadmap" class="text-gray-400 hover:text-secondary transition-colors">發展路線圖</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">常見問題</a></li>
-                        <li><a href="https://patch-parcel-83f.notion.site/BYB-28348b182d8a80c1b09bc1d2e33c45da?source=copy_link" class="text-gray-400 hover:text-secondary transition-colors" target="_blank">白皮書</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">技術文檔</a></li>
+                    <h4 class="font-bold text-sm uppercase tracking-wider text-secondary mb-5">資源中心</h4>
+                    <ul class="space-y-1">
+                        <li><a href="#faq" class="footer-link">常見問題 FAQ</a></li>
+                        <li><a href="https://patch-parcel-83f.notion.site/BYB-28348b182d8a80c1b09bc1d2e33c45da?source=copy_link" class="footer-link" target="_blank">白皮書 v1.0</a></li>
+                        <li>
+                            <a href="https://bybanx.com/" class="footer-link" target="_blank">
+                                Bybanx 平台 <span class="text-secondary text-xs font-semibold ml-1">即將開放</span>
+                            </a>
+                        </li>
+                        <li><a href="#contact" class="footer-link">聯繫表單</a></li>
                     </ul>
                 </div>
                 
-                <!-- 联系信息 -->
+                <!-- Contact -->
                 <div>
-                    <h4 class="font-bold text-base mb-4">聯繫我們</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li class="flex items-center">
-                            <i class="fa fa-envelope-o mr-2 text-gray-400"></i>
-                            <a href="mailto:byb2025com@gmail.com" class="text-gray-400 hover:text-secondary transition-colors">byb2025com@gmail.com</a>
+                    <h4 class="font-bold text-sm uppercase tracking-wider text-secondary mb-5">聯繫我們</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-envelope-o text-secondary text-sm flex-shrink-0"></i>
+                            <a href="mailto:byb2025com@gmail.com" class="footer-link text-xs">byb2025com@gmail.com</a>
                         </li>
-                        <li class="flex items-center">
-                            <i class="fa fa-globe mr-2 text-gray-400"></i>
-                            <a href="https://byb2025.com/" class="text-gray-400 hover:text-secondary transition-colors">byb2025.com</a>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-globe text-secondary text-sm flex-shrink-0"></i>
+                            <a href="https://byb2025.com/" class="footer-link text-xs">byb2025.com</a>
                         </li>
-                        <li class="flex items-center">
-                            <i class="fa fa-map-marker mr-2 text-gray-400"></i>
-                            <span class="text-gray-400">香港屯門</span>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-map-marker text-secondary text-sm flex-shrink-0"></i>
+                            <span class="text-gray-500 text-xs">香港屯門 · Tuen Mun, HK</span>
                         </li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-secondary transition-colors">聯繫表單</a></li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-telegram text-secondary text-sm flex-shrink-0"></i>
+                            <a href="https://t.me/BYBANX" class="footer-link text-xs" target="_blank">t.me/BYBANX</a>
+                        </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="pt-6 border-t border-gray-800 text-center text-gray-500 text-xs">
-                <p>© 2025 Bybanx幣友圈BYB 保留所有權利 .</p>
+            <div class="footer-divider mb-6"></div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-600 text-xs">© 2026 Bybanx幣友圈BYB · 敦華集團旗下品牌 · 保留所有權利</p>
+                <div class="flex gap-4 text-xs text-gray-600">
+                    <a href="#" class="hover:text-secondary transition-colors">隱私政策</a>
+                    <span class="dot-separator"></span>
+                    <a href="#" class="hover:text-secondary transition-colors">使用條款</a>
+                    <span class="dot-separator"></span>
+                    <a href="#faq" class="hover:text-secondary transition-colors">風險提示</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -1512,30 +2992,34 @@
                 translateElement.classList.remove('show');
             });
             
-            // 資產標籤切換
+            // 資產標籤切換（帶動畫）
             const assetTabs = document.querySelectorAll('.asset-tab');
             const assetCards = document.querySelectorAll('.asset-card');
             
             assetTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
-                    // 移除所有標籤的活躍狀態
                     assetTabs.forEach(t => {
                         t.classList.remove('active', 'bg-primary', 'text-white');
                         t.classList.add('bg-gray-200', 'text-gray-700');
                     });
-                    
-                    // 添加當前標籤的活躍狀態
                     tab.classList.add('active', 'bg-primary', 'text-white');
                     tab.classList.remove('bg-gray-200', 'text-gray-700');
                     
                     const category = tab.getAttribute('data-category');
-                    
-                    // 篩選資產卡片
                     assetCards.forEach(card => {
                         if (category === 'all' || card.getAttribute('data-category') === category) {
                             card.style.display = 'block';
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.95)';
+                            setTimeout(() => {
+                                card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 10);
                         } else {
-                            card.style.display = 'none';
+                            card.style.transition = 'opacity 0.2s ease';
+                            card.style.opacity = '0';
+                            setTimeout(() => { card.style.display = 'none'; }, 200);
                         }
                     });
                 });
@@ -1671,11 +3155,15 @@
                 }
             });
             
-            // 初始化EmailJS
-            (function() {
-                // 替換為您的EmailJS用戶ID
-                emailjs.init('byb2025com'); // 請在此處替換為您的實際用戶ID
-            })();
+            // ===== 初始化 EmailJS（已修復）=====
+            // 請至 https://www.emailjs.com/ 取得您的 Public Key 並替換下方
+            try {
+                emailjs.init({
+                    publicKey: 'YOUR_EMAILJS_PUBLIC_KEY', // ← 替換為 EmailJS Public Key（格式如：xxxxxxxxxxxxxxxxx）
+                });
+            } catch(e) {
+                console.warn('EmailJS 初始化提示：請更新 Public Key', e);
+            }
             
             // 表單提交處理
             const contactForm = document.getElementById('contactForm');
@@ -1685,54 +3173,269 @@
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // 獲取表單數據
                     const formData = {
-                        name: document.getElementById('name').value,
-                        email: document.getElementById('email').value,
+                        from_name: document.getElementById('name').value,
+                        from_email: document.getElementById('email').value,
                         subject: document.getElementById('subject').value,
-                        message: document.getElementById('message').value
+                        message: document.getElementById('message').value,
+                        to_email: 'byb2025com@gmail.com'
                     };
                     
-                    // 顯示加載狀態
                     const submitButton = contactForm.querySelector('button[type="submit"]');
                     const originalButtonText = submitButton.innerHTML;
                     submitButton.disabled = true;
                     submitButton.innerHTML = '<i class="fa fa-spinner fa-spin mr-2"></i> 發送中...';
                     
-                    // 重置消息狀態
                     formMessage.classList.remove('success', 'error');
                     formMessage.style.display = 'none';
                     
-                    // 使用EmailJS發送郵件
-                    // 替換為您的服務ID和模板ID
+                    // 使用 EmailJS 發送（Service ID 和 Template ID 需在 EmailJS 後台設置）
                     emailjs.send('service_0vg6o4w', 'template_g5i47tb', formData)
                         .then(function(response) {
-                            console.log('郵件發送成功:', response.status, response.text);
-                            
-                            // 顯示成功消息
-                            formMessage.textContent = '您的消息已成功發送，我們將盡快回復您！';
+                            formMessage.textContent = '✓ 您的消息已成功發送，我們將盡快回覆您！';
                             formMessage.classList.add('success');
                             formMessage.style.display = 'block';
-                            
-                            // 重置表單
                             contactForm.reset();
                         }, function(error) {
                             console.error('郵件發送失敗:', error);
-                            
-                            // 顯示錯誤消息
-                            formMessage.textContent = '發送失敗，請稍後再試或直接通過郵箱聯繫我們。';
+                            formMessage.textContent = '發送失敗，請直接通過郵箱聯繫：byb2025com@gmail.com';
                             formMessage.classList.add('error');
                             formMessage.style.display = 'block';
                         })
                         .finally(function() {
-                            // 恢復按鈕狀態
                             submitButton.disabled = false;
                             submitButton.innerHTML = originalButtonText;
                         });
                 });
             }
+
+            // ===== 數字計數動畫（Intersection Observer）=====
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const countObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.dataset.animated) {
+                        entry.target.dataset.animated = 'true';
+                        const target = parseFloat(entry.target.dataset.target);
+                        const suffix = entry.target.dataset.suffix || '';
+                        const duration = 2000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+                        const timer = setInterval(() => {
+                            current += step;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            entry.target.textContent = (Number.isInteger(target) ? Math.floor(current) : current.toFixed(1)) + suffix;
+                        }, 16);
+                    }
+                });
+            }, { threshold: 0.5 });
+            statNumbers.forEach(el => countObserver.observe(el));
+
+        });
+
+        // ===== FAQ 手風琴（全局函數）=====
+        function toggleFaq(item) {
+            const isActive = item.classList.contains('active');
+            // 關閉所有
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').classList.remove('open');
+            });
+            // 打開當前（如果之前是關閉的）
+            if (!isActive) {
+                item.classList.add('active');
+                item.querySelector('.faq-answer').classList.add('open');
+            }
+        }
+
+        // ===== Cookie 同意橫幅=====
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'all');
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'essential');
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+        // 檢查是否已同意
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(() => {
+                    document.getElementById('cookieBanner').classList.add('show');
+                }, 1500);
+            }
         });
     </script>
+
+    <!-- ======================================================
+         UI VISUAL UPGRADE v2.0 — Particle Canvas + Scroll Reveal
+    ====================================================== -->
+    <script>
+    // ── 1. HERO PARTICLE CANVAS ──────────────────────────────
+    (function() {
+        const canvas = document.getElementById('heroCanvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let W, H, particles = [], animId;
+
+        function resize() {
+            W = canvas.width = canvas.offsetWidth;
+            H = canvas.height = canvas.offsetHeight;
+        }
+
+        function Particle() {
+            this.x = Math.random() * W;
+            this.y = Math.random() * H;
+            this.r = Math.random() * 2.5 + 0.5;
+            this.vx = (Math.random() - 0.5) * 0.45;
+            this.vy = (Math.random() - 0.5) * 0.45;
+            this.alpha = Math.random() * 0.5 + 0.1;
+            this.color = Math.random() > 0.6 ? '#E6B325' : '#ffffff';
+        }
+
+        Particle.prototype.update = function() {
+            this.x += this.vx;
+            this.y += this.vy;
+            if (this.x < 0 || this.x > W) this.vx *= -1;
+            if (this.y < 0 || this.y > H) this.vy *= -1;
+        };
+
+        function init() {
+            resize();
+            particles = [];
+            const count = Math.floor((W * H) / 14000);
+            for (let i = 0; i < count; i++) particles.push(new Particle());
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            // Draw connection lines
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(230,179,37,${(1 - dist / 120) * 0.15})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+                // Draw particle
+                ctx.beginPath();
+                ctx.arc(particles[i].x, particles[i].y, particles[i].r, 0, Math.PI * 2);
+                ctx.fillStyle = particles[i].color;
+                ctx.globalAlpha = particles[i].alpha;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+            particles.forEach(p => p.update());
+            animId = requestAnimationFrame(draw);
+        }
+
+        init();
+        draw();
+        window.addEventListener('resize', () => { cancelAnimationFrame(animId); init(); draw(); });
+    })();
+
+    // ── 2. SCROLL REVEAL ────────────────────────────────────
+    (function() {
+        const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        if (!revealEls.length) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealEls.forEach(el => observer.observe(el));
+
+        // Trigger hero section elements immediately (since they start in viewport)
+        setTimeout(() => {
+            document.querySelectorAll('.hero-gradient .reveal, .hero-gradient .reveal-left, .hero-gradient .reveal-right').forEach(el => {
+                el.classList.add('visible');
+            });
+        }, 200);
+    })();
+
+    // ── 3. ASSET TAB v2 support ──────────────────────────────
+    document.querySelectorAll('.asset-tab').forEach(tab => {
+        tab.onclick = function() {
+            document.querySelectorAll('.asset-tab').forEach(t => {
+                t.classList.remove('active');
+            });
+            this.classList.add('active');
+
+            const category = this.dataset.category;
+            document.querySelectorAll('.asset-card').forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.classList.remove('fade-out');
+                    card.style.display = '';
+                } else {
+                    card.classList.add('fade-out');
+                    setTimeout(() => {
+                        if (card.classList.contains('fade-out')) card.style.display = 'none';
+                    }, 350);
+                }
+            });
+        };
+    });
+
+    // ── 4. UPGRADE FORM STYLES ──────────────────────────────
+    (function() {
+        // Add upgrade class to all form inputs
+        document.querySelectorAll('#contactForm input, #contactForm textarea, #contactForm select').forEach(el => {
+            el.classList.add('form-input-upgrade');
+        });
+        const submitBtn = document.querySelector('#contactForm button[type="submit"]');
+        if (submitBtn) submitBtn.classList.add('btn-submit-upgrade');
+    })();
+
+    // ── 5. HERO STATS PULSE ON LOAD ──────────────────────────
+    // The hero stats are static (not IntersectionObserver),
+    // they rely on the global stat-number data observer from the main script.
+    // Re-observe any newly-added .stat-number elements just in case.
+    setTimeout(() => {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        statNumbers.forEach(el => {
+            if (!el.dataset.animated) {
+                // Already handled by main countObserver above
+            }
+        });
+    }, 500);
+
+    // ── 6. SMOOTH NAV HIGHLIGHT ON SCROLL ────────────────────
+    (function() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link-pill');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                const top = sec.getBoundingClientRect().top;
+                if (top < 120) current = sec.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.style.color = '';
+                link.style.background = '';
+                if (current && link.getAttribute('href') === '#' + current) {
+                    link.style.color = '#E6B325';
+                    link.style.background = 'rgba(230,179,37,0.1)';
+                }
+            });
+        }, { passive: true });
+    })();
+    </script>
+
 
     
     </body></html>
